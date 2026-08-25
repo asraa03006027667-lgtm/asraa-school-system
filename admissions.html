@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Entry Test Registration Form | Asraa School System</title>
+
+    <meta name="description"
+        content="Entry Test Registration Form for Asraa School System, Jauharabad Campus. Academic Session 2026–2027.">
+
+    <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #183153;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: linear-gradient(135deg, #062b5c, #0b4d91);
+            color: white;
+            box-shadow: 0 5px 22px rgba(0, 35, 80, 0.18);
+        }
+
+        .header-container {
+            min-height: 82px;
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .brand-text h1 {
+            font-size: 21px;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 12px;
+            color: #d9ecff;
+            margin-top: 3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        nav a {
+            padding: 9px 11px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .nav-active {
+            background: #19a9df;
+        }
+
+        .nav-active:hover {
+            background: #078dc2;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 420px;
+            color: white;
+            background: linear-gradient(
+                120deg,
+                rgba(3, 34, 74, 0.96),
+                rgba(7, 68, 126, 0.91)
+            );
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 85px 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 7px 16px;
+            border-radius: 30px;
+            background: rgba(25, 169, 223, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.08;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: #31bff0;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #e3f0ff;
+            font-size: 17px;
+        }
+
+        .session {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 8px 17px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            color: #e3f0ff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           FORM
+        ========================================================= */
+
+        .registration-section {
+            padding: 85px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #0798d1;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title h2 {
+            color: #09376d;
+            font-size: 37px;
+            margin-top: 6px;
+        }
+
+        .section-title p {
+            max-width: 760px;
+            margin: 12px auto 0;
+            color: #63758c;
+        }
+
+        .notice {
+            max-width: 1000px;
+            margin: 0 auto 25px;
+            padding: 20px 22px;
+            background: #f0f9ff;
+            border-left: 5px solid #079bd5;
+            border-radius: 10px;
+            color: #49647d;
+        }
+
+        .notice strong {
+            color: #09376d;
+        }
+
+        .form-card {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 32px;
+            border-radius: 17px;
+            border: 1px solid #e1e9f2;
+            box-shadow: 0 12px 30px rgba(15, 61, 104, 0.10);
+        }
+
+        .form-section-title {
+            color: #09376d;
+            font-size: 21px;
+            margin: 32px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d9eff8;
+        }
+
+        .form-section-title:first-child {
+            margin-top: 0;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            color: #304b67;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+
+        label span {
+            color: #d00000;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cfe0ee;
+            border-radius: 8px;
+            color: #304b67;
+            font: inherit;
+            font-size: 14px;
+            outline: none;
+            background: #fff;
+            transition: 0.25s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #079bd5;
+            box-shadow: 0 0 0 3px rgba(7, 155, 213, 0.12);
+        }
+
+        input[type="file"] {
+            padding: 10px;
+            background: #f7faff;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .documents {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .document-box {
+            padding: 16px;
+            border: 1px solid #dce8f3;
+            border-radius: 12px;
+            background: #f7faff;
+        }
+
+        .document-box label {
+            display: block;
+            min-height: 46px;
+        }
+
+        .fee-box {
+            padding: 22px;
+            background: #eef7fc;
+            border: 1px solid #cfe8f4;
+            border-radius: 14px;
+        }
+
+        .fee-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid #d5e4ef;
+            color: #49647d;
+        }
+
+        .fee-row:last-of-type {
+            border-bottom: none;
+        }
+
+        .fee-total {
+            color: #09376d;
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .payment-box {
+            margin-top: 16px;
+            padding: 18px;
+            border-radius: 10px;
+            background: white;
+            border: 1px dashed #79bfdc;
+            color: #49647d;
+        }
+
+        .payment-box strong {
+            color: #09376d;
+        }
+
+        .account-holder {
+         color: #09376d;
+         font-weight: 700;
+         margin-top: 8px;
+        }
+
+        .payment-number {
+            color: #079bd5;
+            font-size: 22px;
+            font-weight: 800;
+            margin: 5px 0;
+        }
+
+        .commitment {
+            padding: 20px;
+            background: #f7faff;
+            border: 1px solid #dce8f3;
+            border-radius: 12px;
+            color: #526981;
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .checkbox-row input {
+            width: auto;
+            margin-top: 5px;
+        }
+
+        .checkbox-row label {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .submit-area {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 21px;
+            border: none;
+            border-radius: 8px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .btn-primary {
+            background: #19a9df;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #078dc2;
+            transform: translateY(-2px);
+        }
+
+        .btn-light {
+            background: #e8f2fa;
+            color: #09376d;
+        }
+
+        .btn-light:hover {
+            background: #d8eaf7;
+        }
+
+        /* =========================================================
+           RECEIPT
+        ========================================================= */
+
+        .receipt {
+            display: none;
+            max-width: 1000px;
+            margin: 35px auto 0;
+            background: white;
+            border: 2px solid #09376d;
+            border-radius: 14px;
+            padding: 30px;
+        }
+
+        .receipt-heading {
+            text-align: center;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #d7e4ef;
+            margin-bottom: 14px;
+        }
+
+        .receipt-heading h2 {
+            color: #09376d;
+            font-size: 28px;
+        }
+
+        .receipt-heading p {
+            color: #60748c;
+            font-size: 14px;
+        }
+
+        .receipt-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 10px 0;
+            border-bottom: 1px solid #e1e9f2;
+            color: #526981;
+        }
+
+        .receipt-row strong {
+            color: #09376d;
+        }
+
+        .receipt-note {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f0f9ff;
+            border-left: 5px solid #079bd5;
+            border-radius: 8px;
+            color: #49647d;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #031d3d;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        footer h3 {
+            margin-bottom: 14px;
+            color: #6bd7fa;
+        }
+
+        footer p,
+        footer li {
+            color: #b9cde2;
+            font-size: 13px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 7px;
+        }
+
+        footer a:hover {
+            color: #65d7fa;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            margin-top: 30px;
+            padding-top: 18px;
+            color: #9db2ca;
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+            .header-container {
+                flex-direction: column;
+                padding: 14px 0;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-container {
+                width: 94%;
+            }
+
+            .brand-logo {
+                width: 52px;
+                height: 52px;
+            }
+
+            .brand-text h1 {
+                font-size: 18px;
+            }
+
+            .brand-text p {
+                font-size: 11px;
+            }
+
+            nav {
+                gap: 3px;
+            }
+
+            nav a {
+                font-size: 11px;
+                padding: 7px 8px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-container {
+                padding: 65px 0;
+            }
+
+            .hero h2 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .registration-section {
+                padding: 55px 0;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+
+            .form-card {
+                padding: 20px;
+            }
+
+            .form-grid,
+            .documents,
+            .signature-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-section-title {
+                font-size: 19px;
+            }
+
+            .submit-area .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .receipt {
+                padding: 20px;
+            }
+
+            .receipt-row {
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            header,
+            .hero,
+            .registration-section,
+            footer {
+                display: none !important;
+            }
+
+            .receipt {
+                display: block !important;
+                margin: 0;
+                border: none;
+                box-shadow: none;
+            }
+
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+    const SUPABASE_URL = "https://ohvspfmlkwqdtpyqjhkq.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_T3hWZaRxIuPBlioMfQgIyg_BSjTDd0y";
+
+    const supabaseClient = supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+    );
+</script>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header>
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+                <img
+                    src="images/school-logo.png"
+                    alt="Asraa School System Logo"
+                    class="brand-logo"
+                >
+
+                <div class="brand-text">
+                    <h1>ASRAA SCHOOL SYSTEM</h1>
+                    <p>Jauharabad Campus</p>
+                </div>
+            </a>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="academics.html">Academics</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="events.html">Events</a>
+                <a href="fee-structure.html">Fee Structure</a>
+                <a href="admissions.html" class="nav-active">Entry Test</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="hero">
+        <div class="hero-container">
+
+            <div class="hero-label">Academic Session 2026–2027</div>
+
+            <h2>
+                Entry Test <span>Registration Form</span>
+            </h2>
+
+            <p>
+                Register your child for the Entry Test at
+                Asraa School System, Jauharabad Campus.
+            </p>
+
+            <div class="session">
+                Entry Test Registration Fee: Rs. 500
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         REGISTRATION FORM
+    ========================================================= -->
+
+    <main class="registration-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Online Registration</span>
+                <h2>Student Registration Form</h2>
+                <p>
+                    Please complete all required fields carefully.
+                </p>
+            </div>
+
+            <div class="notice">
+                <strong>Important Note:</strong>
+                This form is for Entry Test registration only. Final admission
+                will be subject to assessment and completion of admission
+                requirements.
+            </div>
+
+            <div class="form-card">
+
+                <form id="entryTestForm">
+
+                    <h3 class="form-section-title">Student Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group full">
+                            <label for="studentName">
+                                Student Name <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="studentName"
+                                required
+                                placeholder="Enter student's full name"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="gender">
+                                Gender <span>*</span>
+                            </label>
+
+                            <select id="gender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">
+                                Date of Birth <span>*</span>
+                            </label>
+
+                            <input type="date" id="dob" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="grade">
+                                Entry Test For Grade <span>*</span>
+                            </label>
+
+                            <select id="grade" required>
+                                <option value="">Select Grade</option>
+                                <option value="Pre-Nursery">Pre-Nursery</option>
+                                <option value="Nursery">Nursery</option>
+                                <option value="Kindergarten (KG)">Kindergarten (KG)</option>
+                                <option value="Grade 1">Grade 1</option>
+                                <option value="Grade 2">Grade 2</option>
+                                <option value="Grade 3">Grade 3</option>
+                                <option value="Grade 4">Grade 4</option>
+                                <option value="Grade 5">Grade 5</option>
+                                <option value="Grade 6">Grade 6</option>
+                                <option value="Grade 7">Grade 7</option>
+                                <option value="Grade 8">Grade 8</option>
+                                <option value="Pre-9th">Pre-9th</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="previousSchool">Previous School Name</label>
+
+                            <input
+                                type="text"
+                                id="previousSchool"
+                                placeholder="If applicable"
+                            >
+                        </div>
+
+                    </div>
+
+                    <h3 class="form-section-title">Parent / Guardian Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="guardianName">
+                                Father / Guardian Name <span>*</span>
+                            </label>
+
+                            <input type="text" id="guardianName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactNumber">
+                                Contact Number <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="contactNumber"
+                                required
+                                placeholder="03XX-XXXXXXX"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="whatsappNumber">WhatsApp Number</label>
+
+                            <input
+                                type="tel"
+                                id="whatsappNumber"
+                                placeholder="03XX-XXXXXXX"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="occupation">Occupation</label>
+
+                            <input type="text" id="occupation">
+                        </div>
+
+                    </div>
+
+                    <h3 class="form-section-title">Required Documents</h3>
+
+                    <div class="documents">
+
+                        <div class="document-box">
+                            <label for="schoolProof">
+                                Previous School Last Class Proof
+                            </label>
+
+                            <input
+                                type="file"
+                                id="schoolProof"
+                                accept="image/*,.pdf"
+                            >
+                        </div>
+
+                        <div class="document-box">
+                            <label for="birthProof">
+                                B-Form / Date of Birth Proof
+                            </label>
+
+                            <input
+                                type="file"
+                                id="birthProof"
+                                accept="image/*,.pdf"
+                            >
+                        </div>
+
+                        <div class="document-box">
+                            <label for="guardianCnic">
+                                Father / Guardian CNIC
+                            </label>
+
+                            <input
+                                type="file"
+                                id="guardianCnic"
+                                accept="image/*,.pdf"
+                            >
+                        </div>
+
+                        <div class="document-box">
+                            <label for="studentPhoto">
+                                One Passport Size Photograph
+                            </label>
+
+                            <input
+                                type="file"
+                                id="studentPhoto"
+                                accept="image/*"
+                            >
+                        </div>
+
+                    </div>
+
+                    <h3 class="form-section-title">Entry Test Fee Details</h3>
+
+                    <div class="fee-box">
+
+                        <div class="fee-row">
+                            <span>Entry Test Registration Fee</span>
+                            <strong>Rs. 500</strong>
+                        </div>
+
+                        <div class="fee-row fee-total">
+                            <span>Total Payable</span>
+                            <span>Rs. 500</span>
+                        </div>
+
+                        <p style="margin-top: 12px;">
+                            <strong>Note:</strong>
+                            Entry Test Fee is <strong>Non-Refundable.</strong>
+                        </p>
+
+                        <div class="payment-box">
+                           <strong>Payment Method: JazzCash</strong>
+
+                            <div class="account-holder">
+                             Account Holder: Muhammad Bilal Hafeez
+                            </div>
+
+                            <div class="payment-number">
+                              0300-6027667
+                              </div>
+
+                            <p>
+                                Please pay Rs. 500 through JazzCash and keep
+                                the payment confirmation with you.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <h3 class="form-section-title">Payment Information</h3>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label for="transactionId">
+                                JazzCash Transaction / Reference ID
+                                <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="transactionId"
+                                required
+                                placeholder="Enter transaction/reference ID"
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="paymentScreenshot">
+                                Payment Screenshot
+                            </label>
+
+                            <input
+                                type="file"
+                                id="paymentScreenshot"
+                                accept="image/*"
+                            >
+                        </div>
+
+                    </div>
+
+                    <h3 class="form-section-title">Parent Commitment Statement</h3>
+
+                    <div class="commitment">
+                        <p>
+                            I understand that this is an Entry Test
+                            Registration Form for my child. Final admission is
+                            subject to assessment and completion of admission
+                            requirements within the given timeline.
+                        </p>
+
+                        <div class="checkbox-row">
+                            <input
+                                type="checkbox"
+                                id="commitment"
+                                required
+                            >
+
+                            <label for="commitment">
+                                I have read and agree to the above statement.
+                                <span>*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="signature-grid" style="margin-top: 25px;">
+
+                        <div class="form-group">
+                            <label for="submissionDate">
+                                Form Submission Date
+                            </label>
+
+                            <input type="date" id="submissionDate">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="parentSignature">
+                                Parent / Guardian Signature
+                            </label>
+
+                            <input
+                                type="text"
+                                id="parentSignature"
+                                placeholder="Type parent/guardian name"
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="submit-area">
+                        <button type="submit" class="btn btn-primary">
+                            Submit Entry Test Registration
+                        </button>
+
+                        <button type="reset" class="btn btn-light">
+                            Reset Form
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <!-- =================================================
+                 RECEIPT
+            ================================================== -->
+
+            <div class="receipt" id="receipt">
+
+                <div class="receipt-heading">
+                    <h2>Entry Test Registration Receipt</h2>
+                    <p>Asraa School System — Jauharabad Campus</p>
+                </div>
+
+                <div class="receipt-row">
+                    <strong>Registration Number</strong>
+                    <span id="receiptNumber"></span>
+                </div>
+
+                <div class="receipt-row">
+                    <strong>Student Name</strong>
+                    <span id="receiptStudent"></span>
+                </div>
+
+                <div class="receipt-row">
+                    <strong>Entry Test For Grade</strong>
+                    <span id="receiptGrade"></span>
+                </div>
+
+                <div class="receipt-row">
+                    <strong>Amount</strong>
+                    <span>Rs. 500</span>
+                </div>
+
+                <div class="receipt-row">
+                    <strong>Purpose</strong>
+                    <span>Entry Test Registration Fee</span>
+                </div>
+
+                <div class="receipt-row">
+                    <strong>Payment Method</strong>
+                    <span>JazzCash</span>
+                </div>
+
+                <div class="receipt-row">
+                    <strong>Session</strong>
+                    <span>2026–2027</span>
+                </div>
+
+                <div class="receipt-note">
+                    <strong>Important:</strong>
+                    Please keep this registration receipt for the Entry Test
+                    and interview.
+                </div>
+
+                <div class="submit-area print-button">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        onclick="window.print()"
+                    >
+                        Print Receipt
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <div class="footer-brand">
+                        <img
+                            src="images/school-logo.png"
+                            alt="Asraa School System Logo"
+                        >
+
+                        <div>
+                            <strong>Asraa School System</strong>
+                            <p>Jauharabad Campus</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        Quality, concept-based and future-oriented education
+                        for confident, responsible and capable students.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>Vision:</strong>
+                        Grooming of Nation Through Education.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="academics.html">Academics</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="fee-structure.html">Fee Structure</a></li>
+                        <li><a href="admissions.html">Entry Test</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Connect With Us</h3>
+
+                    <ul>
+                        <li>
+                            Phone:
+                            <a href="tel:+923006027667">0300-6027667</a>
+                        </li>
+
+                        <li>
+                            Email:
+                            <a href="mailto:asraa03006027667@gmail.com">
+                                Email Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://youtube.com/@asraajbdtv2887?si=tjWZW8D4xlou6pU-"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                YouTube
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://wa.me/923006027667"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                WhatsApp
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://maps.app.goo.gl/wfBdHeQJ2A5T6mF88"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Google Maps
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                © 2026 Asraa School System – Jauharabad Campus.
+                All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+<script>
+    const submissionDate = document.getElementById("submissionDate");
+
+    function setTodayDate() {
+        const today = new Date();
+
+        submissionDate.value =
+            today.getFullYear() +
+            "-" +
+            String(today.getMonth() + 1).padStart(2, "0") +
+            "-" +
+            String(today.getDate()).padStart(2, "0");
+    }
+
+    setTodayDate();
+
+
+    document
+        .getElementById("entryTestForm")
+        .addEventListener("submit", async function (event) {
+
+            event.preventDefault();
+
+            const form = event.target;
+
+            try {
+
+                /* ================================
+                   GENERATE REGISTRATION NUMBER
+                ================================= */
+
+                const randomNumber =
+                    Math.floor(1000 + Math.random() * 9000);
+
+                const registrationNumber =
+                    "ASRAA-ET-" +
+                    new Date().getFullYear() +
+                    "-" +
+                    randomNumber;
+
+
+                /* ================================
+                   COLLECT FORM DATA
+                ================================= */
+
+                const applicationData = {
+
+                    registration_number: registrationNumber,
+
+                    student_name:
+                        document.getElementById("studentName").value.trim(),
+
+                    gender:
+                        document.getElementById("gender").value,
+
+                    date_of_birth:
+                        document.getElementById("dob").value || null,
+
+                    grade:
+                        document.getElementById("grade").value,
+
+                    previous_school:
+                        document.getElementById("previousSchool").value.trim() || null,
+
+                    guardian_name:
+                        document.getElementById("guardianName").value.trim(),
+
+                    contact_number:
+                        document.getElementById("contactNumber").value.trim(),
+
+                    whatsapp_number:
+                        document.getElementById("whatsappNumber").value.trim() || null,
+
+                    occupation:
+                        document.getElementById("occupation").value.trim() || null,
+
+                    school_proof_url: null,
+
+                    birth_proof_url: null,
+
+                    guardian_cnic_url: null,
+
+                    student_photo_url: null,
+
+                    transaction_id:
+                        document.getElementById("transactionId").value.trim() || null,
+
+                    payment_screenshot_url: null,
+
+                    commitment_accepted:
+                        document.getElementById("commitment").checked,
+
+                    submission_date:
+                        submissionDate.value,
+
+                    parent_signature:
+                        document.getElementById("parentSignature").value.trim() || null,
+
+                    status: "Pending",
+
+                    test_date: null,
+
+                    test_time: null,
+
+                    admin_remarks: null
+                };
+
+
+                /* ================================
+                   INSERT INTO SUPABASE
+                ================================= */
+
+                console.log("Submitting data:", applicationData);
+
+                const { data, error } = await supabaseClient
+                    .from("entry_test_applications")
+                    .insert([applicationData])
+                    .select()
+                    .single();
+
+
+                /* ================================
+                   HANDLE SUPABASE ERROR
+                ================================= */
+
+                if (error) {
+
+                    console.error("Supabase Insert Error:", error);
+
+                    alert(
+                        "Application submit نہیں ہوئی۔\n\n" +
+                        "Supabase Error:\n" +
+                        error.message
+                    );
+
+                    return;
+                }
+
+
+                /* ================================
+                   SUCCESS
+                ================================= */
+
+                console.log("Application successfully saved:", data);
+
+
+                /* ================================
+                   SHOW RECEIPT
+                ================================= */
+
+                document.getElementById("receiptNumber").textContent =
+                    registrationNumber;
+
+                document.getElementById("receiptStudent").textContent =
+                    applicationData.student_name;
+
+                document.getElementById("receiptGrade").textContent =
+                    applicationData.grade;
+
+
+                const receipt =
+                    document.getElementById("receipt");
+
+                receipt.style.display = "block";
+
+                receipt.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+
+                /* ================================
+                   RESET FORM
+                ================================= */
+
+                form.reset();
+
+                setTodayDate();
+
+
+                alert(
+                    "Application successfully submitted!\n\n" +
+                    "Registration Number: " +
+                    registrationNumber
+                );
+
+            }
+
+            catch (err) {
+
+                console.error("Unexpected Error:", err);
+
+                alert(
+                    "Application submit کرتے وقت unexpected error آیا ہے۔\n\n" +
+                    err.message
+                );
+            }
+
+        });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Academics | Asraa School System</title>
+
+    <meta name="description"
+        content="Academic approach, classes, assessment and learning programs at Asraa School System, Jauharabad Campus.">
+
+    <style>
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #183153;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: linear-gradient(135deg, #062b5c, #0b4d91);
+            color: white;
+            box-shadow: 0 5px 22px rgba(0, 35, 80, 0.18);
+        }
+
+        .header-container {
+            min-height: 82px;
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .brand-text h1 {
+            font-size: 21px;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 12px;
+            color: #d9ecff;
+            margin-top: 3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        nav a {
+            padding: 9px 11px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .nav-active {
+            background: #19a9df;
+        }
+
+        .nav-active:hover {
+            background: #078dc2;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 470px;
+            color: white;
+            background: linear-gradient(
+                120deg,
+                rgba(3, 34, 74, 0.96),
+                rgba(7, 68, 126, 0.91)
+            );
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 85px 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 7px 16px;
+            border-radius: 30px;
+            background: rgba(25, 169, 223, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(40px, 5vw, 60px);
+            line-height: 1.08;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: #31bff0;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #e3f0ff;
+            font-size: 17px;
+        }
+
+        .session {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 8px 17px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            color: #e3f0ff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           COMMON SECTION
+        ========================================================= */
+
+        section {
+            padding: 85px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #0798d1;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title h2 {
+            color: #09376d;
+            font-size: 37px;
+            margin-top: 6px;
+        }
+
+        .section-title p {
+            max-width: 760px;
+            margin: 12px auto 0;
+            color: #63758c;
+        }
+
+        .intro-section,
+        .classes-section {
+            background: white;
+        }
+
+        .approach-section,
+        .assessment-section {
+            background: #f3f7fb;
+        }
+
+        /* =========================================================
+           ACADEMIC INTRODUCTION
+        ========================================================= */
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .info-card {
+            background: #f7faff;
+            border: 1px solid #e0eaf5;
+            border-radius: 17px;
+            padding: 30px;
+        }
+
+        .info-card h3 {
+            color: #0b4380;
+            font-size: 23px;
+            margin-bottom: 14px;
+        }
+
+        .info-card p {
+            color: #5e7188;
+            margin-bottom: 16px;
+        }
+
+        .info-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .focus-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .focus-list div {
+            background: white;
+            border-left: 4px solid #15a6da;
+            padding: 9px 12px;
+            border-radius: 7px;
+            color: #183153;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           LEARNING APPROACH
+        ========================================================= */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 26px;
+            border: 1px solid #e1e9f2;
+            transition: 0.25s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 61, 104, 0.10);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e1f5fc;
+            color: #058dc4;
+            border-radius: 12px;
+            font-size: 17px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .feature-card h3 {
+            color: #0a3e77;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            color: #667991;
+            font-size: 14px;
+        }
+
+        /* =========================================================
+           CLASSES
+        ========================================================= */
+
+        .class-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 11px;
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .class-item {
+            background: #eef7fc;
+            color: #0b477f;
+            border: 1px solid #cfe8f4;
+            border-radius: 30px;
+            padding: 10px 17px;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           ASSESSMENT
+        ========================================================= */
+
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .assessment-card {
+            background: white;
+            padding: 30px;
+            border-radius: 17px;
+            border: 1px solid #e1ebf6;
+        }
+
+        .assessment-card .number {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #dff4fc;
+            color: #058dc4;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 17px;
+        }
+
+        .assessment-card h3 {
+            color: #0a3d76;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .assessment-card p {
+            color: #60748c;
+        }
+
+        .reporting-box {
+            margin-top: 26px;
+            padding: 23px;
+            background: white;
+            border-left: 5px solid #079bd5;
+            border-radius: 12px;
+            color: #596e88;
+        }
+
+        .reporting-box strong {
+            color: #09376d;
+        }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+            background: linear-gradient(135deg, #0b579b, #08a5d9);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #eaf8ff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 21px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .btn-light {
+            background: white;
+            color: #07376d;
+        }
+
+        .btn-light:hover {
+            background: #edf7ff;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #031d3d;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        footer h3 {
+            margin-bottom: 14px;
+            color: #6bd7fa;
+        }
+
+        footer p,
+        footer li {
+            color: #b9cde2;
+            font-size: 13px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 7px;
+        }
+
+        footer a:hover {
+            color: #65d7fa;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            margin-top: 30px;
+            padding-top: 18px;
+            color: #9db2ca;
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+            .header-container {
+                flex-direction: column;
+                padding: 14px 0;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .feature-grid,
+            .assessment-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .header-container {
+                width: 94%;
+            }
+
+            .brand-logo {
+                width: 52px;
+                height: 52px;
+            }
+
+            .brand-text h1 {
+                font-size: 18px;
+            }
+
+            .brand-text p {
+                font-size: 11px;
+            }
+
+            nav {
+                gap: 3px;
+            }
+
+            nav a {
+                font-size: 11px;
+                padding: 7px 8px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-container {
+                padding: 65px 0;
+            }
+
+            .hero h2 {
+                font-size: 39px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .intro-grid,
+            .feature-grid,
+            .assessment-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .focus-list {
+                grid-template-columns: 1fr;
+            }
+
+            .info-card,
+            .feature-card,
+            .assessment-card {
+                padding: 22px;
+            }
+
+            .cta h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header>
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+                <img
+                    src="images/school-logo.png"
+                    alt="Asraa School System Logo"
+                    class="brand-logo"
+                >
+
+                <div class="brand-text">
+                    <h1>ASRAA SCHOOL SYSTEM</h1>
+                    <p>Jauharabad Campus</p>
+                </div>
+            </a>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="Academics.html" class="nav-active">Academics</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="events.html">Events</a>
+                <a href="fee-structure.html">Fee Structure</a>
+                <a href="admissions.html">Entry Test</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="hero">
+        <div class="hero-container">
+
+            <div class="hero-label">Learning for the Future</div>
+
+            <h2>
+                Our <span>Academics</span>
+            </h2>
+
+            <p>
+                A concept-based, practical and student-centered academic
+                approach that helps learners grow with confidence.
+            </p>
+
+            <div class="session">
+                Academic Session 2026–2027
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         ACADEMIC INTRODUCTION
+    ========================================================= -->
+
+    <section class="intro-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Our Academic Approach</span>
+                <h2>Meaningful Learning</h2>
+
+                <p>
+                    We focus on understanding, skills, character and
+                    confident learning—not only memorising information.
+                </p>
+            </div>
+
+            <div class="intro-grid">
+
+                <div class="info-card">
+                    <h3>Education With Purpose</h3>
+
+                    <p>
+                        Asraa School System provides quality, concept-based
+                        and skill-oriented education for a changing world.
+                    </p>
+
+                    <p>
+                        Our academic environment helps students understand
+                        ideas clearly, develop practical abilities and build
+                        confidence in their learning journey.
+                    </p>
+
+                    <p>
+                        We encourage students to become responsible,
+                        capable and future-ready individuals.
+                    </p>
+                </div>
+
+                <div class="info-card">
+                    <h3>What Students Learn</h3>
+
+                    <div class="focus-list">
+                        <div>SLO-Based Education</div>
+                        <div>Concept-Based Learning</div>
+                        <div>Practical Learning</div>
+                        <div>Project-Based Learning</div>
+                        <div>Activity-Based Learning</div>
+                        <div>Communication Skills</div>
+                        <div>Character Building</div>
+                        <div>Confidence Building</div>
+                        <div>AI &amp; Digital Skills</div>
+                        <div>Future Skills</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         LEARNING APPROACH
+    ========================================================= -->
+
+    <section class="approach-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Learning Methodology</span>
+                <h2>How We Teach</h2>
+
+                <p>
+                    Learning methods designed to make education clear,
+                    practical, engaging and useful.
+                </p>
+            </div>
+
+            <div class="feature-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">01</div>
+                    <h3>SLO-Based Education</h3>
+                    <p>Students learn according to clearly defined Student Learning Outcomes.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">02</div>
+                    <h3>Concept-Based Learning</h3>
+                    <p>Students are encouraged to understand concepts instead of only memorising information.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">03</div>
+                    <h3>Practical Learning</h3>
+                    <p>Practical activities help students apply their classroom knowledge in meaningful ways.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">04</div>
+                    <h3>Project-Based Learning</h3>
+                    <p>Projects connect subjects with real-life situations and strengthen problem-solving skills.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">05</div>
+                    <h3>Communication Skills</h3>
+                    <p>Listening, speaking and language development are important parts of student growth.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">06</div>
+                    <h3>AI &amp; Future Skills</h3>
+                    <p>Students are introduced to digital skills, AI-related learning and future-oriented abilities.</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         CLASSES
+    ========================================================= -->
+
+    <section class="classes-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Academic Levels</span>
+                <h2>Classes &amp; Grades</h2>
+
+                <p>
+                    Asraa School System provides education from Early Years
+                    through Pre-9th.
+                </p>
+            </div>
+
+            <div class="class-grid">
+                <div class="class-item">Pre-Nursery</div>
+                <div class="class-item">Nursery</div>
+                <div class="class-item">Kindergarten (KG)</div>
+                <div class="class-item">Grade 1</div>
+                <div class="class-item">Grade 2</div>
+                <div class="class-item">Grade 3</div>
+                <div class="class-item">Grade 4</div>
+                <div class="class-item">Grade 5</div>
+                <div class="class-item">Grade 6</div>
+                <div class="class-item">Grade 7</div>
+                <div class="class-item">Grade 8</div>
+                <div class="class-item">Pre-9th</div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         ASSESSMENT
+    ========================================================= -->
+
+    <section class="assessment-section">
+        <div class="container">
+
+            <div class="section-title">
+                <span>Academic Progress</span>
+                <h2>Assessment &amp; Reporting</h2>
+
+                <p>
+                    Regular assessment helps us understand every student's
+                    progress and support their learning.
+                </p>
+            </div>
+
+            <div class="assessment-grid">
+
+                <div class="assessment-card">
+                    <div class="number">01</div>
+                    <h3>Weekly Assessment</h3>
+
+                    <p>
+                        Regular weekly tests help teachers monitor academic
+                        progress and identify areas where students need support.
+                    </p>
+                </div>
+
+                <div class="assessment-card">
+                    <div class="number">02</div>
+                    <h3>Term-Wise Examinations</h3>
+
+                    <p>
+                        First Term, Second Term and Third Term examinations
+                        provide a clear picture of academic achievement.
+                    </p>
+                </div>
+
+                <div class="assessment-card">
+                    <div class="number">03</div>
+                    <h3>Student Portfolio</h3>
+
+                    <p>
+                        A complete learning portfolio records each student's
+                        academic work, development and progress.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="reporting-box">
+                <strong>Parent Reporting:</strong>
+                Parents are kept connected through class-based WhatsApp groups,
+                regular updates, assessment information and digital monitoring
+                of academic progress.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         CTA
+    ========================================================= -->
+
+    <section class="cta">
+        <h2>Start Your Child's Educational Journey</h2>
+
+        <p>
+            Register for the Entry Test and become part of
+            Asraa School System, Jauharabad Campus.
+        </p>
+
+        <a href="admissions.html" class="btn btn-light">
+            Entry Test Registration
+        </a>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <div class="footer-brand">
+                        <img
+                            src="images/school-logo.png"
+                            alt="Asraa School System Logo"
+                        >
+
+                        <div>
+                            <strong>Asraa School System</strong>
+                            <p>Jauharabad Campus</p>
+                        </div>
+                    </div>
+
+                    <p>
+                        Quality, concept-based and future-oriented education
+                        for confident, responsible and capable students.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>Vision:</strong>
+                        Grooming of Nation Through Education.
+                    </p>
+                </div>
+
+                <div>
+                    <h3>Quick Links</h3>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="Academics.html">Academics</a></li>
+                        <li><a href="facilities.html">Facilities</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="fee-structure.html">Fee Structure</a></li>
+                        <li><a href="Admission.html">Entry Test</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3>Connect With Us</h3>
+
+                    <ul>
+                        <li>
+                            Phone:
+                            <a href="tel:+923006027667">0300-6027667</a>
+                        </li>
+
+                        <li>
+                            Email:
+                            <a href="mailto:asraa03006027667@gmail.com">
+                                Email Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://youtube.com/@asraajbdtv2887?si=tjWZW8D4xlou6pU-"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                YouTube
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://wa.me/923006027667"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                WhatsApp
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://maps.app.goo.gl/wfBdHeQJ2A5T6mF88"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Google Maps
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="copyright">
+                © 2026 Asraa School System – Jauharabad Campus.
+                All Rights Reserved.
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

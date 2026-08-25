@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery | Asraa School System</title>
+
+    <meta
+        name="description"
+        content="Explore school activities, learning moments, events and memories at Asraa School System, Jauharabad Campus."
+    >
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f8fc;
+            color: #183153;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            background: linear-gradient(135deg, #062b5c, #0b4d91);
+            color: white;
+            box-shadow: 0 5px 22px rgba(0, 35, 80, 0.18);
+        }
+
+        .header-container {
+            min-height: 82px;
+            width: 92%;
+            max-width: 1250px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            flex-shrink: 0;
+        }
+
+        .brand-logo {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        .brand-text h1 {
+            font-size: 21px;
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 12px;
+            color: #d9ecff;
+            margin-top: 3px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 4px;
+        }
+
+        nav a {
+            padding: 9px 11px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            transition: 0.25s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .nav-active {
+            background: #19a9df;
+        }
+
+        .nav-active:hover {
+            background: #078dc2;
+        }
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 430px;
+            color: white;
+            background:
+                linear-gradient(
+                    120deg,
+                    rgba(3, 34, 74, 0.96),
+                    rgba(7, 68, 126, 0.91)
+                );
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+            padding: 85px 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+            padding: 7px 16px;
+            border-radius: 30px;
+            background: rgba(25, 169, 223, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: clamp(40px, 5vw, 60px);
+            line-height: 1.08;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: #31bff0;
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: #e3f0ff;
+            font-size: 17px;
+        }
+
+        .session {
+            display: inline-block;
+            margin-top: 22px;
+            padding: 8px 17px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.20);
+            color: #e3f0ff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           GALLERY
+        ========================================================= */
+
+        .gallery-section {
+            background: white;
+            padding: 85px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #0798d1;
+            font-size: 13px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title h2 {
+            color: #09376d;
+            font-size: 37px;
+            margin-top: 6px;
+        }
+
+        .section-title p {
+            max-width: 760px;
+            margin: 12px auto 0;
+            color: #63758c;
+        }
+
+        /* =========================================================
+           FILTERS
+        ========================================================= */
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 38px;
+        }
+
+        .filter-btn {
+            border: 1px solid #d7e4ef;
+            background: #f7faff;
+            color: #31516f;
+            padding: 9px 16px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+
+        .filter-btn:hover {
+            background: #e5f6fc;
+            border-color: #19a9df;
+            color: #087da9;
+        }
+
+        .filter-btn.active {
+            background: #19a9df;
+            border-color: #19a9df;
+            color: white;
+        }
+
+        /* =========================================================
+           GALLERY GRID
+        ========================================================= */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .gallery-card {
+            overflow: hidden;
+            background: white;
+            border: 1px solid #e1e9f2;
+            border-radius: 17px;
+            transition: 0.25s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(15, 61, 104, 0.10);
+        }
+
+        .gallery-image-wrap {
+            position: relative;
+            overflow: hidden;
+            background: #e1f5fc;
+            height: 235px;
+            cursor: pointer;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s ease;
+        }
+
+        .gallery-card:hover .gallery-image {
+            transform: scale(1.04);
+        }
+
+        .gallery-content {
+            padding: 22px;
+        }
+
+        .gallery-category {
+            display: inline-block;
+            padding: 5px 11px;
+            border-radius: 30px;
+            background: #dff4fc;
+            color: #087da9;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 12px;
+        }
+
+        .gallery-content h3 {
+            color: #0a3e77;
+            font-size: 21px;
+            line-height: 1.3;
+            margin-bottom: 10px;
+        }
+
+        .gallery-content p {
+            color: #667991;
+            font-size: 14px;
+        }
+
+        /* =========================================================
+           MESSAGES
+        ========================================================= */
+
+        .loading-message,
+        .empty-message,
+        .error-message {
+            max-width: 700px;
+            margin: auto;
+            padding: 24px;
+            border-radius: 13px;
+            text-align: center;
+        }
+
+        .loading-message,
+        .empty-message {
+            color: #60748c;
+            background: #f7faff;
+            border: 1px solid #e0eaf5;
+        }
+
+        .error-message {
+            color: #8a4a00;
+            background: #fff8e6;
+            border-left: 5px solid #d89b00;
+        }
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .cta {
+            background: linear-gradient(135deg, #0b579b, #08a5d9);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .cta h2 {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: #eaf8ff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 21px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: 0.25s ease;
+        }
+
+        .btn-light {
+            background: white;
+            color: #07376d;
+        }
+
+        .btn-light:hover {
+            background: #edf7ff;
+            transform: translateY(-2px);
+        }
+
+        /* =========================================================
+           LIGHTBOX
+        ========================================================= */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            z-index: 20000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 25px;
+            background: rgba(0, 20, 45, 0.92);
+        }
+
+        .lightbox.show {
+            display: flex;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 1050px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .lightbox-image {
+            max-height: 78vh;
+            width: auto;
+            max-width: 100%;
+            margin: auto;
+            border-radius: 12px;
+            object-fit: contain;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+        }
+
+        .lightbox-caption {
+            color: white;
+            margin-top: 15px;
+            font-size: 15px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            width: 38px;
+            height: 38px;
+            border: none;
+            border-radius: 50%;
+            background: white;
+            color: #07376d;
+            font-size: 23px;
+            line-height: 38px;
+            cursor: pointer;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #031d3d;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr 1fr;
+            gap: 35px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 4px;
+        }
+
+        footer h3 {
+            margin-bottom: 14px;
+            color: #6bd7fa;
+        }
+
+        footer p,
+        footer li {
+            color: #b9cde2;
+            font-size: 13px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 7px;
+        }
+
+        footer a:hover {
+            color: #65d7fa;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.10);
+            margin-top: 30px;
+            padding-top: 18px;
+            color: #9db2ca;
+            font-size: 12px;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1100px) {
+
+            .header-container {
+                flex-direction: column;
+                padding: 14px 0;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .gallery-grid,
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .header-container {
+                width: 94%;
+            }
+
+            .brand-logo {
+                width: 52px;
+                height: 52px;
+            }
+
+            .brand-text h1 {
+                font-size: 18px;
+            }
+
+            .brand-text p {
+                font-size: 11px;
+            }
+
+            nav {
+                gap: 3px;
+            }
+
+            nav a {
+                font-size: 11px;
+                padding: 7px 8px;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero-container {
+                padding: 65px 0;
+            }
+
+            .hero h2 {
+                font-size: 39px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .gallery-section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .gallery-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-image-wrap {
+                height: 225px;
+            }
+
+            .cta h2 {
+                font-size: 29px;
+            }
+
+            .lightbox {
+                padding: 15px;
+            }
+
+            .lightbox-close {
+                top: -48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+
+    <header>
+        <div class="header-container">
+
+            <a href="index.html" class="brand">
+
+                <img
+                    src="images/school-logo.png"
+                    alt="Asraa School System Logo"
+                    class="brand-logo"
+                >
+
+                <div class="brand-text">
+                    <h1>ASRAA SCHOOL SYSTEM</h1>
+                    <p>Jauharabad Campus</p>
+                </div>
+
+            </a>
+
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="academics.html">Academics</a>
+                <a href="facilities.html">Facilities</a>
+                <a href="gallery.html" class="nav-active">Gallery</a>
+                <a href="events.html">Events</a>
+                <a href="fee-structure.html">Fee Structure</a>
+                <a href="admissions.html">Entry Test</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section class="hero">
+
+        <div class="hero-container">
+
+            <div class="hero-label">School Memories</div>
+
+            <h2>
+                School <span>Gallery</span>
+            </h2>
+
+            <p>
+                Explore memorable moments, learning activities,
+                student achievements and special events at
+                Asraa School System, Jauharabad Campus.
+            </p>
+
+            <div class="session">
+                Academic Session 2026–2027
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <main>
+
+        <!-- =====================================================
+             GALLERY
+        ====================================================== -->
+
+        <section class="gallery-section">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>Our Memories</span>
+
+                    <h2>Photo Gallery</h2>
+
+                    <p>
+                        Discover moments from classroom learning,
+                        student activities, school events and
+                        everyday life at Asraa School System.
+                    </p>
+
+                </div>
+
+
+                <!-- FILTERS -->
+
+                <div
+                    id="galleryFilters"
+                    class="gallery-filters"
+                >
+                    <button
+                        type="button"
+                        class="filter-btn active"
+                        data-category="all"
+                    >
+                        All
+                    </button>
+                </div>
+
+
+                <!-- GALLERY -->
+
+                <div
+                    id="galleryGrid"
+                    class="gallery-grid"
+                >
+
+                    <div class="loading-message">
+                        Loading school gallery...
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta">
+
+            <h2>
+                Start Your Child's Educational Journey
+            </h2>
+
+            <p>
+                Register for the Entry Test and become part of
+                Asraa School System, Jauharabad Campus.
+            </p>
+
+            <a
+                href="admissions.html"
+                class="btn btn-light"
+            >
+                Entry Test Registration
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         LIGHTBOX
+    ========================================================= -->
+
+    <div
+        id="lightbox"
+        class="lightbox"
+        aria-hidden="true"
+    >
+
+        <div class="lightbox-content">
+
+            <button
+                type="button"
+                id="lightboxClose"
+                class="lightbox-close"
+                aria-label="Close image"
+            >
+                ×
+            </button>
+
+            <img
+                id="lightboxImage"
+                class="lightbox-image"
+                src=""
+                alt="School Gallery Image"
+            >
+
+            <div
+                id="lightboxCaption"
+                class="lightbox-caption"
+            ></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+
+                    <div class="footer-brand">
+
+                        <img
+                            src="images/school-logo.png"
+                            alt="Asraa School System Logo"
+                        >
+
+                        <div>
+
+                            <strong>
+                                Asraa School System
+                            </strong>
+
+                            <p>
+                                Jauharabad Campus
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Quality, concept-based and future-oriented
+                        education for confident, responsible and
+                        capable students.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        <strong>Vision:</strong>
+                        Grooming of Nation Through Education.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>Quick Links</h3>
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+
+                        <li>
+                            <a href="academics.html">Academics</a>
+                        </li>
+
+                        <li>
+                            <a href="facilities.html">Facilities</a>
+                        </li>
+
+                        <li>
+                            <a href="gallery.html">Gallery</a>
+                        </li>
+
+                        <li>
+                            <a href="events.html">Events</a>
+                        </li>
+
+                        <li>
+                            <a href="fee-structure.html">
+                                Fee Structure
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="admissions.html">
+                                Entry Test
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div>
+
+                    <h3>Connect With Us</h3>
+
+                    <ul>
+
+                        <li>
+                            Phone:
+                            <a href="tel:+923006027667">
+                                0300-6027667
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="mailto:asraa03006027667@gmail.com">
+                                Email Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://www.facebook.com/share/1DAtNeWV4G/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Facebook
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://youtube.com/@asraajbdtv2887?si=tjWZW8D4xlou6pU-"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                YouTube
+                            </a>
+                        </li>
+
+                        <li>
+                            <a
+                                href="https://whatsapp.com/channel/0029Vaa1z1r6rsQkpHoCi50M"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                WhatsApp Channel
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+            <div class="copyright">
+
+                © 2026 Asraa School System – Jauharabad Campus.
+                All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         GALLERY JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        const apiUrl =
+            "https://script.google.com/macros/s/AKfycbzn5HsEiaFdRujiAo3UQtcIPmtFhn1yiPM4AM8y0rWtvkrHoxCfO7ZmkScBBAPYsGBeug/exec?type=gallery";
+
+
+        const galleryGrid =
+            document.getElementById("galleryGrid");
+
+
+        const galleryFilters =
+            document.getElementById("galleryFilters");
+
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+
+        const lightboxImage =
+            document.getElementById("lightboxImage");
+
+
+        const lightboxCaption =
+            document.getElementById("lightboxCaption");
+
+
+        const lightboxClose =
+            document.getElementById("lightboxClose");
+
+
+        let galleryItems = [];
+
+        let currentCategory = "all";
+
+
+        /* =========================================================
+           CREATE GALLERY CARD
+        ========================================================= */
+
+        function createGalleryCard(item) {
+
+            const card =
+                document.createElement("article");
+
+            card.className = "gallery-card";
+
+
+            const imageWrap =
+                document.createElement("div");
+
+            imageWrap.className =
+                "gallery-image-wrap";
+
+
+            const image =
+                document.createElement("img");
+
+            image.className =
+                "gallery-image";
+
+
+            image.src =
+                item.imageUrl;
+
+
+            image.alt =
+                item.title ||
+                "Asraa School System Gallery";
+
+
+            image.loading = "lazy";
+
+
+            imageWrap.appendChild(image);
+
+
+            imageWrap.addEventListener(
+                "click",
+                function () {
+
+                    openLightbox(
+                        item.imageUrl,
+                        item.title,
+                        item.caption
+                    );
+
+                }
+            );
+
+
+            const content =
+                document.createElement("div");
+
+            content.className =
+                "gallery-content";
+
+
+            if (item.category) {
+
+                const category =
+                    document.createElement("span");
+
+                category.className =
+                    "gallery-category";
+
+                category.textContent =
+                    item.category;
+
+                content.appendChild(category);
+
+            }
+
+
+            const title =
+                document.createElement("h3");
+
+            title.textContent =
+                item.title ||
+                "School Memory";
+
+
+            content.appendChild(title);
+
+
+            if (item.caption) {
+
+                const caption =
+                    document.createElement("p");
+
+                caption.textContent =
+                    item.caption;
+
+                content.appendChild(caption);
+
+            }
+
+
+            card.appendChild(imageWrap);
+
+            card.appendChild(content);
+
+
+            return card;
+
+        }
+
+
+        /* =========================================================
+           DISPLAY GALLERY
+        ========================================================= */
+
+        function displayGallery() {
+
+            galleryGrid.innerHTML = "";
+
+
+            const filteredItems =
+                galleryItems.filter(function (item) {
+
+                    if (
+                        currentCategory === "all"
+                    ) {
+                        return true;
+                    }
+
+                    return (
+                        item.category &&
+                        item.category
+                            .trim()
+                            .toLowerCase() ===
+                        currentCategory
+                            .trim()
+                            .toLowerCase()
+                    );
+
+                });
+
+
+            if (filteredItems.length === 0) {
+
+                const empty =
+                    document.createElement("div");
+
+                empty.className =
+                    "empty-message";
+
+                empty.textContent =
+                    currentCategory === "all"
+                        ? "No gallery photos have been published yet."
+                        : "No photos are available in this category.";
+
+                galleryGrid.appendChild(empty);
+
+                return;
+
+            }
+
+
+            filteredItems.forEach(function (item) {
+
+                if (
+                    item.imageUrl &&
+                    item.imageUrl.trim() !== ""
+                ) {
+
+                    galleryGrid.appendChild(
+                        createGalleryCard(item)
+                    );
+
+                }
+
+            });
+
+
+            if (
+                galleryGrid.children.length === 0
+            ) {
+
+                const empty =
+                    document.createElement("div");
+
+                empty.className =
+                    "empty-message";
+
+                empty.textContent =
+                    "No gallery photos are available at the moment.";
+
+                galleryGrid.appendChild(empty);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           CREATE CATEGORY FILTERS
+        ========================================================= */
+
+        function createFilters() {
+
+            galleryFilters.innerHTML = "";
+
+
+            const allButton =
+                document.createElement("button");
+
+            allButton.type = "button";
+
+            allButton.className =
+                "filter-btn active";
+
+            allButton.dataset.category =
+                "all";
+
+            allButton.textContent =
+                "All";
+
+
+            galleryFilters.appendChild(
+                allButton
+            );
+
+
+            const categories = [];
+
+
+            galleryItems.forEach(function (item) {
+
+                if (
+                    item.category &&
+                    item.category.trim() !== ""
+                ) {
+
+                    const category =
+                        item.category.trim();
+
+
+                    const exists =
+                        categories.some(function (existing) {
+
+                            return (
+                                existing.toLowerCase() ===
+                                category.toLowerCase()
+                            );
+
+                        });
+
+
+                    if (!exists) {
+                        categories.push(category);
+                    }
+
+                }
+
+            });
+
+
+            categories.sort();
+
+
+            categories.forEach(function (category) {
+
+                const button =
+                    document.createElement("button");
+
+                button.type = "button";
+
+                button.className =
+                    "filter-btn";
+
+                button.dataset.category =
+                    category;
+
+                button.textContent =
+                    category;
+
+
+                galleryFilters.appendChild(
+                    button
+                );
+
+            });
+
+
+            galleryFilters
+                .querySelectorAll(".filter-btn")
+                .forEach(function (button) {
+
+                    button.addEventListener(
+                        "click",
+                        function () {
+
+                            galleryFilters
+                                .querySelectorAll(
+                                    ".filter-btn"
+                                )
+                                .forEach(function (btn) {
+
+                                    btn.classList.remove(
+                                        "active"
+                                    );
+
+                                });
+
+
+                            button.classList.add(
+                                "active"
+                            );
+
+
+                            currentCategory =
+                                button.dataset.category;
+
+
+                            displayGallery();
+
+                        }
+                    );
+
+                });
+
+        }
+
+
+        /* =========================================================
+           LIGHTBOX
+        ========================================================= */
+
+        function openLightbox(
+            imageUrl,
+            title,
+            caption
+        ) {
+
+            lightboxImage.src =
+                imageUrl;
+
+
+            lightboxImage.alt =
+                title ||
+                "School Gallery Image";
+
+
+            lightboxCaption.textContent =
+                caption
+                    ? title + " — " + caption
+                    : title || "";
+
+
+            lightbox.classList.add("show");
+
+            lightbox.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.style.overflow =
+                "hidden";
+
+        }
+
+
+        function closeLightbox() {
+
+            lightbox.classList.remove(
+                "show"
+            );
+
+            lightbox.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            lightboxImage.src = "";
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        lightboxClose.addEventListener(
+            "click",
+            closeLightbox
+        );
+
+
+        lightbox.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    event.target === lightbox
+                ) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeLightbox();
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           LOAD GALLERY
+        ========================================================= */
+
+        async function loadGallery() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        apiUrl,
+                        {
+                            cache: "no-store"
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to load gallery."
+                    );
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (
+                    !Array.isArray(data)
+                ) {
+
+                    throw new Error(
+                        "Invalid gallery data."
+                    );
+
+                }
+
+
+                galleryItems =
+                    data.filter(function (item) {
+
+                        return (
+                            item.imageUrl &&
+                            item.imageUrl.trim() !== ""
+                        );
+
+                    });
+
+
+                createFilters();
+
+                displayGallery();
+
+
+            } catch (error) {
+
+                galleryGrid.innerHTML = "";
+
+
+                const errorMessage =
+                    document.createElement("div");
+
+                errorMessage.className =
+                    "error-message";
+
+                errorMessage.textContent =
+                    "Gallery could not be loaded at the moment. Please try again later.";
+
+
+                galleryGrid.appendChild(
+                    errorMessage
+                );
+
+            }
+
+        }
+
+
+        loadGallery();
+
+    </script>
+
+</body>
+</html>
