@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Asraa School System</title>
+<meta name="description" content="Learn about Asraa School System, Jauharabad Campus—our vision, mission, values, educational approach and facilities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   TOKENS — same as index.html, same brand colors
+========================================================= */
+:root{
+  --navy-950:#031d3d;
+  --navy-900:#062b5c;
+  --navy-800:#07376d;
+  --navy-700:#0b4d91;
+  --sky-600:#078dc2;
+  --sky-500:#19a9df;
+  --sky-300:#7ddcff;
+  --ink:#09376d;
+  --slate:#5e7188;
+  --slate-soft:#63758c;
+  --bg-50:#f5f8fc;
+  --bg-100:#f7faff;
+  --bg-100b:#eef5fc;
+  --bg-100c:#f3f7fb;
+  --border:#e1ebf6;
+  --border-soft:#e0eaf5;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --shadow-sm:0 10px 28px rgba(15,61,104,0.08);
+  --shadow-md:0 16px 40px rgba(15,61,104,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-50);
+  color:var(--slate);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;color:var(--ink);font-weight:600;letter-spacing:-0.01em;}
+.container{width:92%;max-width:1200px;margin:auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--sky-600);font-weight:500;
+}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--sky-500);display:inline-block;}
+
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  *{animation:none !important; transition:none !important;}
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+header{
+  position:sticky;top:0;z-index:999;
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-700));
+  box-shadow:0 5px 22px rgba(0,35,80,0.18);
+}
+.header-container{
+  width:92%;max-width:1250px;margin:auto;
+  min-height:82px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:13px;flex-shrink:0;}
+.brand-logo{
+  width:60px;height:60px;object-fit:cover;background:transparent;
+  border-radius:50%;padding:0;border:2px solid rgba(255,255,255,0.35);
+}
+.brand-text h1{font-size:1.2rem;line-height:1.2;color:#fff;font-weight:600;}
+.brand-text p{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--sky-300);margin-top:4px;}
+nav.main-nav{display:flex;align-items:center;gap:2px;}
+nav.main-nav a{
+  padding:9px 12px;border-radius:7px;font-size:0.83rem;font-weight:600;
+  color:rgba(255,255,255,0.88);transition:background .2s,color .2s;white-space:nowrap;
+}
+nav.main-nav a:hover{background:rgba(255,255,255,0.12);color:#fff;}
+nav.main-nav a.current{color:#fff;background:transparent;position:relative;}
+nav.main-nav a.current::after{
+  content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:var(--sky-500);
+}
+.nav-entry{background:var(--sky-500) !important;color:#fff !important;}
+.nav-entry:hover{background:var(--sky-600) !important;}
+.menu-toggle{
+  display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;padding:6px;
+}
+
+/* =========================================================
+   HERO (centered variant for interior pages)
+========================================================= */
+.hero{
+  position:relative;overflow:hidden;color:#fff;text-align:center;
+  background:linear-gradient(125deg,var(--navy-950) 0%,var(--navy-900) 45%,var(--navy-700) 100%);
+}
+.hero-grid-texture{
+  position:absolute;inset:0;opacity:0.14;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse 60% 80% at 50% 30%, black 40%, transparent 82%);
+}
+.hero-container{
+  position:relative;z-index:2;width:92%;max-width:900px;margin:auto;padding:88px 0 76px;
+}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:30px;
+  background:rgba(25,169,223,0.16);border:1px solid rgba(255,255,255,0.25);
+  font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;
+  text-transform:uppercase;font-weight:500;margin-bottom:24px;
+}
+.hero h2{font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.1;color:#fff;margin-bottom:20px;}
+.hero h2 em{font-style:italic;color:var(--sky-300);}
+.hero p{max-width:640px;margin:auto;color:#dcebf9;font-size:1.05rem;}
+.session{
+  display:inline-flex;align-items:center;gap:8px;margin-top:26px;padding:9px 18px;border-radius:30px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);
+  font-family:'JetBrains Mono',monospace;color:#e3f0ff;font-size:0.78rem;font-weight:500;letter-spacing:0.04em;
+}
+.session .dot{width:6px;height:6px;border-radius:50%;background:var(--sky-500);display:inline-block;}
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+section{padding:96px 0;}
+.section-title{text-align:center;max-width:720px;margin:0 auto 52px;}
+.section-title h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin-top:10px;}
+.section-title p{margin-top:14px;font-size:1.02rem;color:var(--slate-soft);}
+.intro-section,.vmv-section,.classes-section{background:#fff;}
+.principal-section,.features-section,.facilities-section{background:var(--bg-100c);}
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.info-card{
+  background:var(--bg-100);border:1px solid var(--border-soft);border-radius:var(--radius-md);
+  padding:34px;transition:box-shadow .25s, transform .25s;
+}
+.info-card:hover{box-shadow:var(--shadow-sm);transform:translateY(-3px);}
+.info-card h3{font-size:1.3rem;margin-bottom:14px;}
+.info-card p{color:var(--slate);margin-bottom:16px;}
+.info-card p:last-child{margin-bottom:0;}
+.focus-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px;}
+.focus-list div{
+  background:#fff;border-left:3px solid var(--sky-500);padding:10px 13px;border-radius:7px;
+  font-size:0.83rem;font-weight:700;color:var(--navy-800);
+}
+
+/* =========================================================
+   DIRECTOR MESSAGE
+========================================================= */
+.principal-grid{display:grid;grid-template-columns:360px 1fr;gap:56px;align-items:center;}
+.principal-photo{
+  background:#fff;padding:14px;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);
+}
+.principal-photo img{width:100%;height:440px;object-fit:cover;border-radius:14px;background:var(--bg-100b);}
+.principal-text h3{font-size:2rem;margin-bottom:4px;}
+.principal-role{
+  font-family:'JetBrains Mono',monospace;color:var(--sky-600);font-weight:500;
+  font-size:0.82rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:22px;display:block;
+}
+.principal-message{
+  background:#fff;padding:28px;border-radius:14px;border-left:4px solid var(--sky-500);
+  box-shadow:var(--shadow-sm);
+}
+.principal-message p{margin-bottom:16px;}
+.principal-message p:last-child{margin-bottom:0;}
+
+/* =========================================================
+   VISION / MISSION / VALUES
+========================================================= */
+.vmv-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;}
+.vmv-card{
+  padding:34px;border-radius:var(--radius-md);background:var(--bg-100);
+  border:1px solid var(--border-soft);transition:transform .25s, box-shadow .25s;
+}
+.vmv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);}
+.vmv-icon{
+  width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  background:#dff4fc;color:var(--sky-600);border-radius:12px;
+  font-family:'Fraunces',serif;font-size:1.35rem;font-weight:700;margin-bottom:18px;
+}
+.vmv-card h3{font-size:1.25rem;margin-bottom:12px;}
+.values li{padding:7px 0;color:#526981;font-weight:600;display:flex;align-items:center;gap:9px;}
+.values li::before{content:"✓";color:var(--sky-600);font-weight:800;}
+
+/* =========================================================
+   EDUCATIONAL FEATURES (numbered — a real sequence: 9 features listed in order)
+========================================================= */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.feature-card{
+  background:#fff;border-radius:15px;padding:28px;border:1px solid var(--border);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.feature-icon{
+  width:46px;height:46px;display:flex;align-items:center;justify-content:center;
+  background:#e1f5fc;color:var(--sky-600);border-radius:12px;
+  font-family:'JetBrains Mono',monospace;font-size:0.85rem;font-weight:500;margin-bottom:16px;
+}
+.feature-card h3{font-size:1.08rem;margin-bottom:8px;}
+.feature-card p{font-size:0.9rem;}
+
+/* =========================================================
+   CLASSES
+========================================================= */
+.class-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:980px;margin:auto;}
+.class-item{
+  background:var(--bg-100b);color:var(--navy-800);border:1px solid #cfe8f4;
+  border-radius:30px;padding:11px 20px;font-size:0.85rem;font-weight:700;
+  transition:background .2s, color .2s, transform .2s;
+}
+.class-item:hover{background:var(--sky-500);color:#fff;border-color:var(--sky-500);transform:translateY(-2px);}
+
+/* =========================================================
+   FACILITIES
+========================================================= */
+.facility-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.facility-card{
+  background:#fff;border-radius:15px;padding:26px;border:1px solid var(--border);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.facility-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm);}
+.facility-card h3{font-size:1.02rem;margin-bottom:9px;}
+.facility-card p{font-size:0.87rem;}
+
+/* =========================================================
+   CTA
+========================================================= */
+.cta{
+  background:linear-gradient(135deg,var(--navy-700),var(--sky-600));
+  color:#fff;text-align:center;padding:80px 20px;
+}
+.cta h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.3rem);margin-bottom:12px;}
+.cta p{max-width:680px;margin:0 auto 28px;color:#eaf8ff;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 24px;border-radius:9px;font-weight:700;font-size:0.94rem;
+  transition:transform .2s ease, background .2s ease;
+}
+.btn-light{background:#fff;color:var(--navy-800);}
+.btn-light:hover{background:#edf7ff;transform:translateY(-3px);}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+.contact-section{background:var(--navy-950);color:#fff;}
+.contact-section .section-title h2{color:#fff;}
+.contact-section .section-title p{color:#c7dcf1;}
+.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.contact-card{
+  background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);
+  border-radius:15px;padding:28px;text-align:center;transition:background .2s, transform .2s;
+}
+.contact-card:hover{background:rgba(255,255,255,0.1);transform:translateY(-4px);}
+.contact-icon{
+  width:46px;height:46px;margin:0 auto 12px;border-radius:50%;background:rgba(25,169,223,0.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.35rem;
+}
+.contact-card h3{color:#fff;font-size:1.05rem;margin-bottom:8px;}
+.contact-card p{font-size:0.85rem;color:#c7dcf1;word-break:break-word;}
+.contact-card a.link{color:var(--sky-300);font-weight:600;font-size:0.85rem;display:inline-block;margin-top:10px;}
+.contact-card a.link:hover{text-decoration:underline;}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer{background:#021530;color:#fff;padding:60px 0 24px;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;}
+.footer-brand{display:flex;align-items:center;gap:13px;margin-bottom:18px;}
+.footer-brand img{width:52px;height:52px;object-fit:cover;background:transparent;border-radius:50%;}
+.footer-brand strong{font-family:'Fraunces',serif;font-size:1.1rem;color:#fff;}
+.footer-brand p{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--sky-300);
+  letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;}
+footer .col p{color:#a9c1db;font-size:0.88rem;}
+footer .col p + p{margin-top:12px;}
+footer h4{margin-bottom:16px;color:var(--sky-300);font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+footer li{margin-bottom:9px;font-size:0.88rem;color:#a9c1db;}
+footer li a:hover{color:var(--sky-300);}
+.copyright{
+  text-align:center;border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:20px;
+  color:#7f97b3;font-size:0.78rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width:1100px){
+  nav.main-nav{
+    position:fixed;top:82px;left:0;right:0;background:var(--navy-900);
+    flex-direction:column;align-items:stretch;padding:10px 18px 18px;
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  nav.main-nav.open{max-height:520px;}
+  nav.main-nav a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:0;}
+  nav.main-nav a.current::after{display:none;}
+  nav.main-nav a.current{background:rgba(255,255,255,0.1);}
+  .menu-toggle{display:block;}
+  .principal-grid{grid-template-columns:1fr;max-width:700px;margin:auto;}
+  .principal-photo{max-width:370px;margin:auto;}
+  .intro-grid,.vmv-grid{grid-template-columns:1fr;}
+  .feature-grid,.facility-grid,.contact-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:700px){
+  section{padding:64px 0;}
+  .header-container{width:94%;}
+  .brand-logo{width:46px;height:46px;}
+  .brand-text h1{font-size:1rem;}
+  .hero h2{font-size:2.1rem;}
+  .principal-photo{max-width:340px;}
+  .principal-photo img{height:360px;}
+  .focus-list{grid-template-columns:1fr;}
+  .feature-grid,.facility-grid,.contact-grid,.footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================================= HEADER ========================================================= -->
+<header>
+  <div class="header-container">
+    <a href="index.html" class="brand">
+      <img src="images/school-logo.png" alt="Asraa School System Logo" class="brand-logo" onerror="this.style.opacity='0.35'">
+      <div class="brand-text">
+        <h1>Asraa School System</h1>
+        <p>Jauharabad Campus</p>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="current">About Us</a>
+      <a href="academics.html">Academics</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="fee-structure.html">Fee Structure</a>
+      <a href="admissions.html" class="nav-entry">Entry Test</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ========================================================= HERO ========================================================= -->
+<section class="hero">
+  <div class="hero-grid-texture"></div>
+  <div class="hero-container">
+    <span class="hero-label reveal">About Our School</span>
+    <h2 class="reveal">About <em>Asraa School System</em></h2>
+    <p class="reveal">Quality, concept-based and future-oriented education for confident, responsible and capable students.</p>
+    <div class="session reveal"><span class="dot"></span>Academic Session 2026–2027</div>
+  </div>
+</section>
+
+<!-- ========================================================= SCHOOL INTRODUCTION ========================================================= -->
+<section class="intro-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Who We Are</span>
+      <h2>School Introduction</h2>
+      <p>Quality, concept-based and skill-oriented education for a changing world.</p>
+    </div>
+
+    <div class="intro-grid">
+      <div class="info-card reveal">
+        <h3>Asraa School System</h3>
+        <p>Asraa School System is an educational institution based in Jauharabad, District Khushab, Punjab, Pakistan.</p>
+        <p>The school was established with the aim of providing quality, concept-based and skill-oriented education and preparing students for the challenges of the modern world.</p>
+        <p>We provide an environment where students understand concepts, develop practical skills, build confidence and become responsible individuals.</p>
+      </div>
+
+      <div class="info-card reveal">
+        <h3>Our Educational Focus</h3>
+        <div class="focus-list">
+          <div>SLO-Based Education</div>
+          <div>Concept-Based Learning</div>
+          <div>Practical Learning</div>
+          <div>Project-Based Learning</div>
+          <div>Character Building</div>
+          <div>Communication Skills</div>
+          <div>Future Skills</div>
+          <div>Confidence Building</div>
+          <div>Student-Centered Learning</div>
+          <div>AI &amp; Digital Skills</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= DIRECTOR MESSAGE ========================================================= -->
+<section class="principal-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Leadership</span>
+      <h2>Director's Message</h2>
+      <p>Leadership and educational vision of Asraa School System.</p>
+    </div>
+
+    <div class="principal-grid">
+      <div class="principal-photo reveal">
+        <img src="images/principal.jpg" alt="Muhammad Bilal Hafeez" onerror="this.style.opacity='0.35'">
+      </div>
+
+      <div class="principal-text reveal">
+        <h3>Muhammad Bilal Hafeez</h3>
+        <span class="principal-role">Director, Asraa School System</span>
+        <div class="principal-message">
+          <p>Asraa School System is committed to providing quality education that develops students academically, morally, socially and practically.</p>
+          <p>Our educational approach focuses on SLO-based learning, practical education, character building, communication skills and the development of future-ready students.</p>
+          <p>We aim to create a modern, concept-based and future-oriented educational environment where students can develop confidence, practical skills and a strong sense of responsibility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= VISION MISSION CORE VALUES ========================================================= -->
+<section class="vmv-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Our Foundation</span>
+      <h2>Vision, Mission &amp; Core Values</h2>
+    </div>
+
+    <div class="vmv-grid">
+      <div class="vmv-card reveal">
+        <div class="vmv-icon">V</div>
+        <h3>Our Vision</h3>
+        <p>"Grooming of Nation Through Education."</p>
+      </div>
+
+      <div class="vmv-card reveal">
+        <div class="vmv-icon">M</div>
+        <h3>Our Mission</h3>
+        <p>Asraa School System is committed to providing quality education that develops students academically, morally, socially and practically, enabling them to become confident, responsible and capable individuals who contribute positively to society.</p>
+      </div>
+
+      <div class="vmv-card reveal">
+        <div class="vmv-icon">&#9733;</div>
+        <h3>Core Values</h3>
+        <ul class="values">
+          <li>Leadership</li>
+          <li>Faith</li>
+          <li>Sincerity</li>
+          <li>Righteousness</li>
+          <li>Courage</li>
+          <li>Eloquence</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= EDUCATIONAL FEATURES ========================================================= -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Learning Approach</span>
+      <h2>Educational Features</h2>
+      <p>Our educational approach combines academic learning, practical skills and personal development.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card reveal"><div class="feature-icon">01</div><h3>Student-Centered Learning</h3><p>Learning approaches designed around students' needs and development.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">02</div><h3>SLO-Based Education</h3><p>Students learn according to clearly defined Student Learning Outcomes.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">03</div><h3>Concept-Based Learning</h3><p>The focus is on understanding concepts instead of only memorizing information.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">04</div><h3>Practical Learning</h3><p>Students are encouraged to apply knowledge through practical activities.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">05</div><h3>Project-Based Learning</h3><p>Projects connect classroom learning with real-life situations.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">06</div><h3>Activity-Based Learning</h3><p>Interactive activities make learning meaningful, engaging and enjoyable.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">07</div><h3>Character Building</h3><p>Focus on manners, responsibility, discipline, confidence and positive behaviour.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">08</div><h3>Communication Skills</h3><p>Listening, speaking and language development are important parts of learning.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">09</div><h3>AI &amp; Digital Skills</h3><p>Students are introduced to digital skills, AI-related learning and future skills.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= CLASSES ========================================================= -->
+<section class="classes-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Academic Levels</span>
+      <h2>Classes &amp; Grades</h2>
+      <p>Asraa School System provides education from Early Years through Pre-9th.</p>
+    </div>
+
+    <div class="class-grid reveal">
+      <div class="class-item">Pre-Nursery</div>
+      <div class="class-item">Nursery</div>
+      <div class="class-item">Kindergarten (KG)</div>
+      <div class="class-item">Grade 1</div>
+      <div class="class-item">Grade 2</div>
+      <div class="class-item">Grade 3</div>
+      <div class="class-item">Grade 4</div>
+      <div class="class-item">Grade 5</div>
+      <div class="class-item">Grade 6</div>
+      <div class="class-item">Grade 7</div>
+      <div class="class-item">Grade 8</div>
+      <div class="class-item">Pre-9th</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= FACILITIES ========================================================= -->
+<section class="facilities-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>School Facilities</h2>
+      <p>A safe, supportive and modern environment for students.</p>
+    </div>
+
+    <div class="facility-grid">
+      <div class="facility-card reveal"><h3>Qualified Teaching Staff</h3><p>Qualified and experienced teachers including M.Phil, M.Sc and BS-level professionals.</p></div>
+      <div class="facility-card reveal"><h3>AI &amp; Future Skills</h3><p>Dedicated AI classes, digital skills and age-appropriate modern technology learning.</p></div>
+      <div class="facility-card reveal"><h3>Spacious Classrooms</h3><p>Comfortable classrooms designed for effective classroom activities and learning.</p></div>
+      <div class="facility-card reveal"><h3>Student Portfolio</h3><p>A complete learning portfolio records each student's academic journey and progress.</p></div>
+      <div class="facility-card reveal"><h3>Weekly Assessment</h3><p>Regular weekly tests help monitor academic progress and keep parents informed.</p></div>
+      <div class="facility-card reveal"><h3>Parents App</h3><p>Parents can monitor results, attendance and academic progress digitally.</p></div>
+      <div class="facility-card reveal"><h3>Quran Education</h3><p>Free Quran education with emphasis on correct recitation and Tajweed.</p></div>
+      <div class="facility-card reveal"><h3>Student Safety</h3><p>Dedicated security arrangements help maintain a safe environment for students and staff.</p></div>
+      <div class="facility-card reveal"><h3>Online Diary System</h3><p>Digital sharing of homework, classwork, instructions and academic activities.</p></div>
+      <div class="facility-card reveal"><h3>Clean Drinking Water</h3><p>Safe drinking-water arrangements suitable for students in every season.</p></div>
+      <div class="facility-card reveal"><h3>Standby Generator</h3><p>Backup power facility for essential school operations.</p></div>
+      <div class="facility-card reveal"><h3>Parent Communication</h3><p>Regular contact with parents regarding academics, attendance, activities and fees.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= CTA ========================================================= -->
+<section class="cta">
+  <h2 class="reveal">Start Your Child's Educational Journey</h2>
+  <p class="reveal">Learn more about admission and registration at Asraa School System, Jauharabad Campus.</p>
+  <a href="admissions.html" class="btn btn-light reveal">Entry Test Registration</a>
+</section>
+
+<!-- ========================================================= CONTACT ========================================================= -->
+<section class="contact-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Get In Touch</span>
+      <h2>Contact Us</h2>
+      <p>We are here to stay connected with students and parents.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-icon">&#128205;</div>
+        <h3>Location</h3>
+        <p>Main Road Iftikhar Town,<br>Jauharabad, District Khushab,<br>Punjab, Pakistan</p>
+        <a class="link" href="https://maps.app.goo.gl/wfBdHeQJ2A5T6mF88" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-icon">&#128222;</div>
+        <h3>Phone / WhatsApp</h3>
+        <p>0300-6027667</p>
+        <a class="link" href="https://wa.me/923006027667" target="_blank" rel="noopener noreferrer">Chat on WhatsApp →</a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-icon">&#9993;&#65039;</div>
+        <h3>Email</h3>
+        <p>asraa03006027667@gmail.com</p>
+        <a class="link" href="mailto:asraa03006027667@gmail.com">Send Email →</a>
+      </div>
+
+      <div class="contact-card reveal">
+        <div class="contact-icon">&#9654;</div>
+        <h3>YouTube</h3>
+        <p>Official Asraa School System YouTube Channel</p>
+        <a class="link" href="https://youtube.com/@asraajbdtv2887?si=tjWZW8D4xlou6pU-" target="_blank" rel="noopener noreferrer">Visit Channel →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================= FOOTER ========================================================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="col">
+        <div class="footer-brand">
+          <img src="images/school-logo.png" alt="Asraa School System Logo" onerror="this.style.opacity='0.35'">
+          <div>
+            <strong>Asraa School System</strong>
+            <p>Jauharabad Campus</p>
+          </div>
+        </div>
+        <p>Quality, concept-based and future-oriented education for confident, responsible and capable students.</p>
+        <p><strong style="color:#fff;">Vision:</strong> Grooming of Nation Through Education.</p>
+      </div>
+
+      <div class="col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="fee-structure.html">Fee Structure</a></li>
+          <li><a href="admissions.html">Entry Test</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h4>Connect With Us</h4>
+        <ul>
+          <li>&#128222; <a href="tel:+923006027667">0300-6027667</a></li>
+          <li>&#9993;&#65039; <a href="mailto:asraa03006027667@gmail.com">Email Us</a></li>
+          <li>&#9654; <a href="https://youtube.com/@asraajbdtv2887?si=tjWZW8D4xlou6pU-" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li>&#128172; <a href="https://wa.me/923006027667" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li>&#128205; <a href="https://maps.app.goo.gl/wfBdHeQJ2A5T6mF88" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">© 2026 Asraa School System – Jauharabad Campus. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>
