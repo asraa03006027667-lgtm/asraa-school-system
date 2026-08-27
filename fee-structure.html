@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fee Structure | Asraa School System</title>
+<meta name="description" content="Fee Structure for Asraa School System, Jauharabad Campus. Academic Session 2026–2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#031d3d;
+  --navy-900:#062b5c;
+  --navy-800:#07376d;
+  --navy-700:#0b4d91;
+  --sky-600:#078dc2;
+  --sky-500:#19a9df;
+  --sky-300:#7ddcff;
+  --ink:#09376d;
+  --slate:#5e7188;
+  --slate-soft:#63758c;
+  --bg-50:#f5f8fc;
+  --bg-100:#f7faff;
+  --bg-100c:#f3f7fb;
+  --border:#e1ebf6;
+  --border-soft:#e0eaf5;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --shadow-sm:0 10px 28px rgba(15,61,104,0.08);
+  --shadow-md:0 16px 40px rgba(15,61,104,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-50);
+  color:var(--slate);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;color:var(--ink);font-weight:600;letter-spacing:-0.01em;}
+.container{width:92%;max-width:1200px;margin:auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--sky-600);font-weight:500;
+}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--sky-500);display:inline-block;}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  *{animation:none !important; transition:none !important;}
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+header{
+  position:sticky;top:0;z-index:999;
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-700));
+  box-shadow:0 5px 22px rgba(0,35,80,0.18);
+}
+.header-container{
+  width:92%;max-width:1250px;margin:auto;
+  min-height:82px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:13px;flex-shrink:0;}
+.brand-logo{
+  width:60px;height:60px;object-fit:cover;background:transparent;
+  border-radius:50%;padding:0;border:2px solid rgba(255,255,255,0.35);
+}
+.brand-text h1{font-size:1.2rem;line-height:1.2;color:#fff;font-weight:600;letter-spacing:0;}
+.brand-text p{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--sky-300);margin-top:4px;}
+nav.main-nav{display:flex;align-items:center;gap:2px;}
+nav.main-nav a{
+  padding:9px 12px;border-radius:7px;font-size:0.83rem;font-weight:600;
+  color:rgba(255,255,255,0.88);transition:background .2s,color .2s;white-space:nowrap;
+}
+nav.main-nav a:hover{background:rgba(255,255,255,0.12);color:#fff;}
+nav.main-nav a.active{color:#fff;background:transparent;position:relative;}
+nav.main-nav a.active::after{
+  content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:var(--sky-500);
+}
+.nav-entry{background:var(--sky-500) !important;color:#fff !important;}
+.nav-entry:hover{background:var(--sky-600) !important;}
+.menu-toggle{
+  display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;padding:6px;
+}
+
+/* =========================================================
+   PAGE HERO
+========================================================= */
+.page-hero{
+  position:relative;overflow:hidden;color:#fff;text-align:center;padding:88px 20px 82px;
+  background:linear-gradient(125deg,var(--navy-950) 0%,var(--navy-900) 45%,var(--navy-700) 100%);
+}
+.hero-grid-texture{
+  position:absolute;inset:0;opacity:0.14;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse 60% 90% at 50% 30%, black 30%, transparent 80%);
+}
+.page-hero > *{position:relative;z-index:2;}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:30px;
+  background:rgba(25,169,223,0.16);border:1px solid rgba(255,255,255,0.25);
+  font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;
+  text-transform:uppercase;font-weight:500;margin-bottom:22px;
+}
+.page-hero h2{font-size:clamp(2.3rem,5vw,3.4rem);line-height:1.1;color:#fff;margin-bottom:18px;}
+.page-hero p{max-width:700px;margin:auto;color:#dcebf9;font-size:1.06rem;}
+.session{
+  display:inline-flex;align-items:center;gap:8px;margin-top:26px;
+  padding:9px 18px;border-radius:30px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);
+  color:#dcebf9;font-size:0.85rem;font-weight:600;
+  font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;
+}
+
+/* =========================================================
+   FEE STRUCTURE
+========================================================= */
+.fee-section{padding:96px 0;}
+.section-heading{text-align:center;margin-bottom:44px;}
+.section-heading h3{font-size:clamp(1.9rem,3.4vw,2.4rem);margin-top:8px;}
+.section-heading p{color:var(--slate-soft);margin-top:10px;font-size:1rem;}
+
+.fee-card{
+  background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);
+  padding:36px;box-shadow:var(--shadow-md);max-width:900px;margin:auto;
+}
+.table-wrapper{width:100%;overflow-x:auto;}
+table{width:100%;min-width:560px;border-collapse:collapse;}
+thead th{
+  background:var(--navy-900);color:#fff;padding:16px 18px;text-align:left;font-size:0.9rem;
+  font-family:'JetBrains Mono',monospace;font-weight:500;letter-spacing:0.03em;text-transform:uppercase;
+}
+thead th:first-child{border-radius:10px 0 0 0;}
+thead th:last-child{border-radius:0 10px 0 0;}
+tbody td{padding:18px;border-bottom:1px solid var(--border);color:var(--slate);vertical-align:middle;}
+tbody tr{transition:background .2s;}
+tbody tr:hover{background:var(--bg-100);}
+.sr{width:70px;color:var(--ink);font-weight:700;font-family:'JetBrains Mono',monospace;}
+.description{color:var(--navy-800);font-weight:700;}
+.description small{display:block;color:var(--slate-soft);font-size:0.82rem;font-weight:400;margin-top:4px;}
+.amount{color:var(--ink);text-align:right;white-space:nowrap;font-weight:700;font-family:'JetBrains Mono',monospace;}
+.total-row td{background:var(--bg-100c);color:var(--ink);border-bottom:none;font-size:1.1rem;font-weight:700;}
+.total-row .amount{color:var(--sky-600);font-size:1.25rem;}
+
+.note{
+  margin-top:30px;padding:22px 24px;background:var(--bg-100);border-left:4px solid var(--sky-500);
+  border-radius:12px;color:var(--slate);
+}
+.note strong{display:block;color:var(--ink);margin-bottom:5px;font-family:'Fraunces',serif;font-size:1.02rem;}
+
+.button-area{text-align:center;margin-top:34px;}
+.button{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 26px;background:var(--sky-500);color:#fff;border-radius:9px;
+  font-size:0.94rem;font-weight:700;transition:0.25s ease;
+}
+.button:hover{background:var(--sky-600);transform:translateY(-3px);box-shadow:0 10px 24px rgba(7,141,194,0.28);}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer{background:#021530;color:#fff;padding:60px 20px 26px;text-align:center;}
+.footer-logo{
+  width:70px;height:70px;object-fit:cover;background:transparent;border-radius:50%;
+  border:2px solid rgba(255,255,255,0.25);margin:0 auto 18px;
+}
+footer h3{color:#fff;font-size:1.3rem;margin-bottom:6px;}
+footer p{color:#a9c1db;font-size:0.9rem;margin:4px 0;}
+.footer-links{margin-top:24px;}
+.footer-links a{
+  display:inline-block;color:var(--sky-300);font-size:0.85rem;font-weight:600;margin:4px 12px;transition:0.2s ease;
+}
+.footer-links a:hover{color:#fff;}
+.copyright{
+  max-width:1200px;margin:28px auto 0;padding-top:20px;
+  border-top:1px solid rgba(255,255,255,0.1);color:#7f97b3;font-size:0.78rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width:1100px){
+  nav.main-nav{
+    position:fixed;top:82px;left:0;right:0;
+    background:var(--navy-900);
+    flex-direction:column;align-items:stretch;padding:10px 18px 18px;
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  nav.main-nav.open{max-height:520px;}
+  nav.main-nav a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:0;}
+  nav.main-nav a.active::after{display:none;}
+  nav.main-nav a.active{background:rgba(255,255,255,0.1);}
+  .menu-toggle{display:block;}
+}
+@media (max-width:600px){
+  .header-container{width:94%;}
+  .brand-logo{width:46px;height:46px;}
+  .brand-text h1{font-size:1rem;}
+  .page-hero{padding:64px 16px 60px;}
+  .page-hero h2{font-size:2rem;}
+  .page-hero p{font-size:0.95rem;}
+  .fee-section{padding:64px 0;}
+  .section-heading h3{font-size:1.6rem;}
+  .fee-card{padding:18px;border-radius:14px;}
+  thead th, tbody td{padding:13px 11px;font-size:0.85rem;}
+  .note{padding:18px;font-size:0.88rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="index.html" class="brand" aria-label="Asraa School System Home">
+      <img src="images/school-logo.png" alt="Asraa School System Logo" class="brand-logo" onerror="this.style.opacity='0.35'">
+      <div class="brand-text">
+        <h1>Asraa School System</h1>
+        <p>Jauharabad Campus</p>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+
+    <nav class="main-nav" id="mainNav" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="academics.html">Academics</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="fee-structure.html" class="active" aria-current="page">Fee Structure</a>
+      <a href="admissions.html" class="nav-entry">Entry Test</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="hero-grid-texture"></div>
+    <span class="hero-label reveal"><span class="dot"></span>School Fees</span>
+    <h2 class="reveal">Fee Structure</h2>
+    <p class="reveal">Fee details for Pre-Nursery to Grade 8.</p>
+    <div class="session reveal">Academic Session 2026–2027</div>
+  </section>
+
+  <section class="fee-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <span class="eyebrow">Asraa School System</span>
+        <h3>Fee Details</h3>
+        <p>Jauharabad Campus — Pre-Nursery to Grade 8</p>
+      </div>
+
+      <div class="fee-card reveal">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Description</th>
+                <th style="text-align:right;">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="sr">01</td>
+                <td class="description">Monthly Fee<small>Pre-Nursery to Grade 8</small></td>
+                <td class="amount">Rs. 3,800</td>
+              </tr>
+              <tr>
+                <td class="sr">02</td>
+                <td class="description">Yearly Test &amp; Paper Fund<small>Pre-Nursery to Grade 8</small></td>
+                <td class="amount">Rs. 3,100</td>
+              </tr>
+              <tr>
+                <td class="sr">03</td>
+                <td class="description">Admission Fee<small>One Time – Non-Refundable</small></td>
+                <td class="amount">Rs. 10,000</td>
+              </tr>
+              <tr class="total-row">
+                <td colspan="2">Total Fee</td>
+                <td class="amount">Rs. 16,900</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="note">
+          <strong>Important Note</strong>
+          Monthly fee is payable every month. Admission Fee is one-time and non-refundable, while the Yearly Test &amp; Paper Fund is charged once per academic session.
+        </div>
+
+        <div class="button-area">
+          <a href="index.html" class="button">&#8592; Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="images/school-logo.png" alt="Asraa School System Logo" class="footer-logo" onerror="this.style.opacity='0.35'">
+  <h3>Asraa School System</h3>
+  <p>Jauharabad Campus</p>
+  <p>Main Road Iftikhar Town, Jauharabad, District Khushab, Punjab, Pakistan</p>
+  <p>Phone / WhatsApp: 0300-6027667</p>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="academics.html">Academics</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="copyright">© 2026 Asraa School System. All Rights Reserved.</div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>

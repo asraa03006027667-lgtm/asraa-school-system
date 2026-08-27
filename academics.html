@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academics | Asraa School System</title>
+<meta name="description" content="Academic approach, classes, assessment and learning programs at Asraa School System, Jauharabad Campus.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#031d3d;
+  --navy-900:#062b5c;
+  --navy-800:#07376d;
+  --navy-700:#0b4d91;
+  --sky-600:#078dc2;
+  --sky-500:#19a9df;
+  --sky-300:#7ddcff;
+  --ink:#09376d;
+  --slate:#5e7188;
+  --slate-soft:#63758c;
+  --bg-50:#f5f8fc;
+  --bg-100:#f7faff;
+  --bg-100c:#f3f7fb;
+  --border:#e1ebf6;
+  --border-soft:#e0eaf5;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --shadow-sm:0 10px 28px rgba(15,61,104,0.08);
+  --shadow-md:0 16px 40px rgba(15,61,104,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-50);
+  color:var(--slate);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;color:var(--ink);font-weight:600;letter-spacing:-0.01em;}
+.container{width:92%;max-width:1200px;margin:auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--sky-600);font-weight:500;
+}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--sky-500);display:inline-block;}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  *{animation:none !important; transition:none !important;}
+}
+
+header{
+  position:sticky;top:0;z-index:999;
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-700));
+  box-shadow:0 5px 22px rgba(0,35,80,0.18);
+}
+.header-container{
+  width:92%;max-width:1250px;margin:auto;
+  min-height:82px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:13px;flex-shrink:0;}
+.brand-logo{
+  width:60px;height:60px;object-fit:cover;background:transparent;
+  border-radius:50%;padding:0;border:2px solid rgba(255,255,255,0.35);
+}
+.brand-text h1{font-size:1.2rem;line-height:1.2;color:#fff;font-weight:600;letter-spacing:0;}
+.brand-text p{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--sky-300);margin-top:4px;}
+nav.main-nav{display:flex;align-items:center;gap:2px;}
+nav.main-nav a{
+  padding:9px 12px;border-radius:7px;font-size:0.83rem;font-weight:600;
+  color:rgba(255,255,255,0.88);transition:background .2s,color .2s;white-space:nowrap;
+}
+nav.main-nav a:hover{background:rgba(255,255,255,0.12);color:#fff;}
+nav.main-nav a.nav-active{color:#fff;background:transparent;position:relative;}
+nav.main-nav a.nav-active::after{
+  content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:var(--sky-500);
+}
+.nav-entry{background:var(--sky-500) !important;color:#fff !important;}
+.nav-entry:hover{background:var(--sky-600) !important;}
+.menu-toggle{
+  display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;padding:6px;
+}
+
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(125deg,var(--navy-950) 0%,var(--navy-900) 45%,var(--navy-700) 100%);
+}
+.hero-grid-texture{
+  position:absolute;inset:0;opacity:0.14;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse 60% 90% at 50% 30%, black 30%, transparent 80%);
+}
+.hero-container{
+  position:relative;z-index:2;
+  width:92%;max-width:1200px;margin:auto;
+  text-align:center;padding:88px 0 82px;
+}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:30px;
+  background:rgba(25,169,223,0.16);border:1px solid rgba(255,255,255,0.25);
+  font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;
+  text-transform:uppercase;font-weight:500;margin-bottom:22px;
+}
+.hero-label .dot{width:7px;height:7px;border-radius:50%;background:var(--sky-500);display:inline-block;}
+.hero h2{font-size:clamp(2.3rem,5vw,3.4rem);line-height:1.1;color:#fff;margin-bottom:20px;}
+.hero h2 em{font-style:italic;color:var(--sky-300);}
+.hero p{max-width:700px;margin:auto;color:#dcebf9;font-size:1.06rem;}
+.session{
+  display:inline-flex;align-items:center;gap:8px;margin-top:26px;
+  padding:9px 18px;border-radius:30px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);
+  color:#dcebf9;font-size:0.85rem;font-weight:600;
+  font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;
+}
+
+section{padding:96px 0;}
+.section-title{text-align:center;max-width:720px;margin:0 auto 52px;}
+.section-title h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin-top:10px;}
+.section-title p{margin-top:14px;font-size:1.02rem;color:var(--slate-soft);}
+
+.intro-section, .classes-section{background:#fff;}
+.approach-section, .assessment-section{background:var(--bg-100c);}
+
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.info-card{
+  background:var(--bg-100);border:1px solid var(--border-soft);border-radius:var(--radius-md);
+  padding:34px;transition:box-shadow .25s, transform .25s;
+}
+.info-card:hover{box-shadow:var(--shadow-sm);transform:translateY(-3px);}
+.info-card h3{font-size:1.3rem;margin-bottom:14px;}
+.info-card p{color:var(--slate);margin-bottom:16px;}
+.info-card p:last-child{margin-bottom:0;}
+.focus-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px;}
+.focus-list div{
+  background:#fff;border-left:3px solid var(--sky-500);padding:10px 13px;border-radius:7px;
+  font-size:0.83rem;font-weight:700;color:var(--navy-800);
+}
+
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.feature-card{
+  background:#fff;border-radius:15px;padding:28px;border:1px solid var(--border);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.feature-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);}
+.feature-icon{
+  width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  background:#e1f5fc;color:var(--sky-600);border-radius:10px;
+  font-family:'JetBrains Mono',monospace;font-size:0.92rem;font-weight:600;margin-bottom:16px;
+}
+.feature-card h3{font-size:1.08rem;margin-bottom:8px;}
+.feature-card p{font-size:0.9rem;}
+
+.class-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:980px;margin:auto;}
+.class-item{
+  background:var(--bg-100c);color:var(--navy-800);border:1px solid #cfe8f4;
+  border-radius:30px;padding:11px 20px;font-size:0.85rem;font-weight:700;
+  transition:background .2s, color .2s, transform .2s;
+}
+.class-item:hover{background:var(--sky-500);color:#fff;border-color:var(--sky-500);transform:translateY(-2px);}
+
+.assessment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.assessment-card{
+  background:#fff;padding:34px;border-radius:var(--radius-md);border:1px solid var(--border-soft);
+  transition:transform .25s, box-shadow .25s;
+}
+.assessment-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-sm);}
+.assessment-card .number{
+  width:52px;height:52px;display:flex;align-items:center;justify-content:center;
+  background:#dff4fc;color:var(--sky-600);border-radius:12px;
+  font-family:'Fraunces',serif;font-size:1.2rem;font-weight:700;margin-bottom:18px;
+}
+.assessment-card h3{font-size:1.25rem;margin-bottom:12px;}
+.reporting-box{
+  margin-top:30px;padding:26px 28px;background:#fff;border-left:4px solid var(--sky-500);
+  border-radius:14px;color:var(--slate);box-shadow:var(--shadow-sm);
+}
+.reporting-box strong{color:var(--ink);}
+
+.cta{
+  background:linear-gradient(135deg,var(--navy-700),var(--sky-600));
+  color:#fff;text-align:center;padding:80px 20px;
+}
+.cta h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.3rem);margin-bottom:12px;}
+.cta p{max-width:680px;margin:0 auto 28px;color:#eaf8ff;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 24px;border-radius:9px;font-weight:700;font-size:0.94rem;
+  transition:transform .2s ease, background .2s ease;
+}
+.btn-light{background:#fff;color:var(--navy-800);}
+.btn-light:hover{background:#edf7ff;transform:translateY(-3px);}
+
+footer{background:#021530;color:#fff;padding:60px 0 24px;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;}
+.footer-brand{display:flex;align-items:center;gap:13px;margin-bottom:18px;}
+.footer-brand img{width:52px;height:52px;object-fit:cover;background:transparent;border-radius:50%;}
+.footer-brand strong{font-family:'Fraunces',serif;font-size:1.1rem;color:#fff;}
+.footer-brand p{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--sky-300);
+  letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;}
+footer .col p{color:#a9c1db;font-size:0.88rem;}
+footer .col p + p{margin-top:12px;}
+footer h3{margin-bottom:16px;color:var(--sky-300);font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+footer li{margin-bottom:9px;font-size:0.88rem;color:#a9c1db;}
+footer li a:hover{color:var(--sky-300);}
+.copyright{
+  text-align:center;border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:20px;
+  color:#7f97b3;font-size:0.78rem;
+}
+
+@media (max-width:1100px){
+  nav.main-nav{
+    position:fixed;top:82px;left:0;right:0;
+    background:var(--navy-900);
+    flex-direction:column;align-items:stretch;padding:10px 18px 18px;
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  nav.main-nav.open{max-height:520px;}
+  nav.main-nav a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:0;}
+  nav.main-nav a.nav-active::after{display:none;}
+  nav.main-nav a.nav-active{background:rgba(255,255,255,0.1);}
+  .menu-toggle{display:block;}
+  .feature-grid, .assessment-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:700px){
+  section{padding:64px 0;}
+  .header-container{width:94%;}
+  .brand-logo{width:46px;height:46px;}
+  .brand-text h1{font-size:1rem;}
+  .hero h2{font-size:2.1rem;}
+  .section-title h2{font-size:1.6rem;}
+  .intro-grid, .feature-grid, .assessment-grid, .footer-grid{grid-template-columns:1fr;}
+  .focus-list{grid-template-columns:1fr;}
+  .info-card, .feature-card, .assessment-card{padding:22px;}
+  .cta h2{font-size:1.6rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="index.html" class="brand">
+      <img src="images/school-logo.png" alt="Asraa School System Logo" class="brand-logo" onerror="this.style.opacity='0.35'">
+      <div class="brand-text">
+        <h1>Asraa School System</h1>
+        <p>Jauharabad Campus</p>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="academics.html" class="nav-active">Academics</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="fee-structure.html">Fee Structure</a>
+      <a href="admissions.html" class="nav-entry">Entry Test</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid-texture"></div>
+  <div class="hero-container">
+    <span class="hero-label reveal"><span class="dot"></span>Learning for the Future</span>
+    <h2 class="reveal">Our <em>Academics</em></h2>
+    <p class="reveal">A concept-based, practical and student-centered academic approach that helps learners grow with confidence.</p>
+    <div class="session reveal">Academic Session 2026–2027</div>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Our Academic Approach</span>
+      <h2>Meaningful Learning</h2>
+      <p>We focus on understanding, skills, character and confident learning—not only memorising information.</p>
+    </div>
+
+    <div class="intro-grid">
+      <div class="info-card reveal">
+        <h3>Education With Purpose</h3>
+        <p>Asraa School System provides quality, concept-based and skill-oriented education for a changing world.</p>
+        <p>Our academic environment helps students understand ideas clearly, develop practical abilities and build confidence in their learning journey.</p>
+        <p>We encourage students to become responsible, capable and future-ready individuals.</p>
+      </div>
+
+      <div class="info-card reveal">
+        <h3>What Students Learn</h3>
+        <div class="focus-list">
+          <div>SLO-Based Education</div>
+          <div>Concept-Based Learning</div>
+          <div>Practical Learning</div>
+          <div>Project-Based Learning</div>
+          <div>Activity-Based Learning</div>
+          <div>Communication Skills</div>
+          <div>Character Building</div>
+          <div>Confidence Building</div>
+          <div>AI &amp; Digital Skills</div>
+          <div>Future Skills</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="approach-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Learning Methodology</span>
+      <h2>How We Teach</h2>
+      <p>Learning methods designed to make education clear, practical, engaging and useful.</p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card reveal"><div class="feature-icon">01</div><h3>SLO-Based Education</h3><p>Students learn according to clearly defined Student Learning Outcomes.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">02</div><h3>Concept-Based Learning</h3><p>Students are encouraged to understand concepts instead of only memorising information.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">03</div><h3>Practical Learning</h3><p>Practical activities help students apply their classroom knowledge in meaningful ways.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">04</div><h3>Project-Based Learning</h3><p>Projects connect subjects with real-life situations and strengthen problem-solving skills.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">05</div><h3>Communication Skills</h3><p>Listening, speaking and language development are important parts of student growth.</p></div>
+      <div class="feature-card reveal"><div class="feature-icon">06</div><h3>AI &amp; Future Skills</h3><p>Students are introduced to digital skills, AI-related learning and future-oriented abilities.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="classes-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Academic Levels</span>
+      <h2>Classes &amp; Grades</h2>
+      <p>Asraa School System provides education from Early Years through Pre-9th.</p>
+    </div>
+
+    <div class="class-grid reveal">
+      <div class="class-item">Pre-Nursery</div>
+      <div class="class-item">Nursery</div>
+      <div class="class-item">Kindergarten (KG)</div>
+      <div class="class-item">Grade 1</div>
+      <div class="class-item">Grade 2</div>
+      <div class="class-item">Grade 3</div>
+      <div class="class-item">Grade 4</div>
+      <div class="class-item">Grade 5</div>
+      <div class="class-item">Grade 6</div>
+      <div class="class-item">Grade 7</div>
+      <div class="class-item">Grade 8</div>
+      <div class="class-item">Pre-9th</div>
+    </div>
+  </div>
+</section>
+
+<section class="assessment-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Academic Progress</span>
+      <h2>Assessment &amp; Reporting</h2>
+      <p>Regular assessment helps us understand every student's progress and support their learning.</p>
+    </div>
+
+    <div class="assessment-grid">
+      <div class="assessment-card reveal">
+        <div class="number">01</div>
+        <h3>Weekly Assessment</h3>
+        <p>Regular weekly tests help teachers monitor academic progress and identify areas where students need support.</p>
+      </div>
+
+      <div class="assessment-card reveal">
+        <div class="number">02</div>
+        <h3>Term-Wise Examinations</h3>
+        <p>First Term, Second Term and Third Term examinations provide a clear picture of academic achievement.</p>
+      </div>
+
+      <div class="assessment-card reveal">
+        <div class="number">03</div>
+        <h3>Student Portfolio</h3>
+        <p>A complete learning portfolio records each student's academic work, development and progress.</p>
+      </div>
+    </div>
+
+    <div class="reporting-box reveal">
+      <strong>Parent Reporting:</strong>
+      Parents are kept connected through class-based WhatsApp groups, regular updates, assessment information and digital monitoring of academic progress.
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2 class="reveal">Start Your Child's Educational Journey</h2>
+  <p class="reveal">Register for the Entry Test and become part of Asraa School System, Jauharabad Campus.</p>
+  <a href="admissions.html" class="btn btn-light reveal">Entry Test Registration</a>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="col">
+        <div class="footer-brand">
+          <img src="images/school-logo.png" alt="Asraa School System Logo" onerror="this.style.opacity='0.35'">
+          <div>
+            <strong>Asraa School System</strong>
+            <p>Jauharabad Campus</p>
+          </div>
+        </div>
+        <p>Quality, concept-based and future-oriented education for confident, responsible and capable students.</p>
+        <p><strong style="color:#fff;">Vision:</strong> Grooming of Nation Through Education.</p>
+      </div>
+
+      <div class="col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="fee-structure.html">Fee Structure</a></li>
+          <li><a href="admissions.html">Entry Test</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>Connect With Us</h3>
+        <ul>
+          <li>&#128222; <a href="tel:+923006027667">0300-6027667</a></li>
+          <li>&#9993;&#65039; <a href="mailto:asraa03006027667@gmail.com">Email Us</a></li>
+          <li>&#9654; <a href="https://youtube.com/@asraajbdtv2887?si=tjWZW8D4xlou6pU-" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li>&#128172; <a href="https://wa.me/923006027667" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li>&#128205; <a href="https://maps.app.goo.gl/wfBdHeQJ2A5T6mF88" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">© 2026 Asraa School System – Jauharabad Campus. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+  });
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+</body>
+</html>

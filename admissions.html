@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entry Test Registration Form | Asraa School System</title>
+<meta name="description" content="Entry Test Registration Form for Asraa School System, Jauharabad Campus. Academic Session 2026–2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-950:#031d3d;
+  --navy-900:#062b5c;
+  --navy-800:#07376d;
+  --navy-700:#0b4d91;
+  --sky-600:#078dc2;
+  --sky-500:#19a9df;
+  --sky-300:#7ddcff;
+  --ink:#09376d;
+  --slate:#5e7188;
+  --slate-soft:#63758c;
+  --bg-50:#f5f8fc;
+  --bg-100:#f7faff;
+  --bg-100c:#f3f7fb;
+  --border:#e1ebf6;
+  --border-soft:#e0eaf5;
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:22px;
+  --shadow-sm:0 10px 28px rgba(15,61,104,0.08);
+  --shadow-md:0 16px 40px rgba(15,61,104,0.12);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:96px;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg-50);
+  color:var(--slate);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;display:block;}
+ul{list-style:none;}
+h1,h2,h3,h4{font-family:'Fraunces',serif;color:var(--ink);font-weight:600;letter-spacing:-0.01em;}
+.container{width:92%;max-width:1200px;margin:auto;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--sky-600);font-weight:500;
+}
+.eyebrow::before{content:"";width:16px;height:1px;background:var(--sky-500);display:inline-block;}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  .reveal{opacity:1;transform:none;transition:none;}
+  *{animation:none !important; transition:none !important;}
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+header{
+  position:sticky;top:0;z-index:999;
+  background:linear-gradient(135deg,var(--navy-900),var(--navy-700));
+  box-shadow:0 5px 22px rgba(0,35,80,0.18);
+}
+.header-container{
+  width:92%;max-width:1250px;margin:auto;
+  min-height:82px;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:13px;flex-shrink:0;}
+.brand-logo{
+  width:60px;height:60px;object-fit:cover;background:transparent;
+  border-radius:50%;padding:0;border:2px solid rgba(255,255,255,0.35);
+}
+.brand-text h1{font-size:1.2rem;line-height:1.2;color:#fff;font-weight:600;letter-spacing:0;}
+.brand-text p{font-family:'JetBrains Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--sky-300);margin-top:4px;}
+nav.main-nav{display:flex;align-items:center;gap:2px;}
+nav.main-nav a{
+  padding:9px 12px;border-radius:7px;font-size:0.83rem;font-weight:600;
+  color:rgba(255,255,255,0.88);transition:background .2s,color .2s;white-space:nowrap;
+}
+nav.main-nav a:hover{background:rgba(255,255,255,0.12);color:#fff;}
+nav.main-nav a.nav-active{background:var(--sky-500) !important;color:#fff !important;}
+nav.main-nav a.nav-active:hover{background:var(--sky-600) !important;}
+.menu-toggle{
+  display:none;background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;padding:6px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero{
+  position:relative;overflow:hidden;color:#fff;
+  background:linear-gradient(125deg,var(--navy-950) 0%,var(--navy-900) 45%,var(--navy-700) 100%);
+}
+.hero-grid-texture{
+  position:absolute;inset:0;opacity:0.14;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse 60% 90% at 50% 30%, black 30%, transparent 80%);
+}
+.hero-container{
+  position:relative;z-index:2;
+  width:92%;max-width:1200px;margin:auto;
+  text-align:center;padding:82px 0 78px;
+}
+.hero-label{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 16px;border-radius:30px;
+  background:rgba(25,169,223,0.16);border:1px solid rgba(255,255,255,0.25);
+  font-family:'JetBrains Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;
+  text-transform:uppercase;font-weight:500;margin-bottom:22px;
+}
+.hero-label .dot{width:7px;height:7px;border-radius:50%;background:var(--sky-500);display:inline-block;}
+.hero h2{font-size:clamp(2.1rem,4.6vw,3.1rem);line-height:1.1;color:#fff;margin-bottom:18px;}
+.hero h2 em{font-style:italic;color:var(--sky-300);}
+.hero p{max-width:680px;margin:auto;color:#dcebf9;font-size:1.02rem;}
+.session{
+  display:inline-flex;align-items:center;gap:8px;margin-top:24px;
+  padding:9px 18px;border-radius:30px;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.2);
+  color:#dcebf9;font-size:0.85rem;font-weight:600;
+  font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;
+}
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+.registration-section{padding:88px 0;}
+.section-title{text-align:center;max-width:720px;margin:0 auto 40px;}
+.section-title h2{font-size:clamp(1.9rem,3.4vw,2.5rem);margin-top:10px;}
+.section-title p{margin-top:14px;font-size:1.02rem;color:var(--slate-soft);}
+
+.notice{
+  max-width:1000px;margin:0 auto 26px;padding:22px 24px;background:var(--bg-100);
+  border-left:4px solid var(--sky-500);border-radius:12px;color:var(--slate);
+}
+.notice strong{color:var(--ink);font-family:'Fraunces',serif;}
+
+.form-card{
+  max-width:1000px;margin:auto;background:#fff;padding:36px;
+  border-radius:var(--radius-lg);border:1px solid var(--border);box-shadow:var(--shadow-md);
+}
+.form-section-title{
+  color:var(--ink);font-size:1.25rem;margin:34px 0 20px;padding-bottom:12px;
+  border-bottom:2px solid var(--border);
+}
+.form-section-title:first-child{margin-top:0;}
+
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.form-group{display:flex;flex-direction:column;}
+.form-group.full{grid-column:1/-1;}
+label{color:var(--navy-800);font-size:0.86rem;font-weight:700;margin-bottom:7px;}
+label span{color:#d00000;}
+
+input, select, textarea{
+  width:100%;padding:12px 14px;border:1px solid var(--border-soft);border-radius:9px;
+  color:var(--navy-800);font:inherit;font-size:0.9rem;outline:none;background:#fff;
+  transition:0.2s ease;
+}
+input:focus, select:focus, textarea:focus{
+  border-color:var(--sky-500);box-shadow:0 0 0 3px rgba(25,169,223,0.14);
+}
+input[type="file"]{padding:10px;background:var(--bg-100);}
+textarea{min-height:100px;resize:vertical;}
+
+.documents{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.document-box{padding:18px;border:1px solid var(--border-soft);border-radius:12px;background:var(--bg-100);}
+.document-box label{display:block;min-height:44px;}
+
+.fee-box{padding:24px;background:var(--bg-100c);border:1px solid var(--border-soft);border-radius:14px;}
+.fee-row{
+  display:flex;justify-content:space-between;gap:20px;padding:11px 0;
+  border-bottom:1px solid var(--border);color:var(--slate);
+}
+.fee-row:last-of-type{border-bottom:none;}
+.fee-total{color:var(--ink);font-size:1.1rem;font-weight:700;}
+
+.payment-box{
+  margin-top:18px;padding:20px;border-radius:12px;background:#fff;
+  border:1px dashed var(--sky-500);color:var(--slate);
+}
+.payment-box strong{color:var(--ink);}
+.account-holder{color:var(--ink);font-weight:700;margin-top:9px;}
+.payment-number{
+  color:var(--sky-600);font-size:1.4rem;font-weight:800;margin:6px 0;
+  font-family:'JetBrains Mono',monospace;
+}
+
+.commitment{padding:22px;background:var(--bg-100);border:1px solid var(--border-soft);border-radius:12px;color:var(--slate);}
+.checkbox-row{display:flex;align-items:flex-start;gap:10px;margin-top:16px;}
+.checkbox-row input{width:auto;margin-top:5px;}
+.checkbox-row label{margin:0;font-weight:600;}
+
+.signature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+
+.submit-area{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 24px;border:none;border-radius:9px;font:inherit;font-weight:700;
+  cursor:pointer;transition:0.25s ease;font-size:0.94rem;
+}
+.btn-primary{background:var(--sky-500);color:#fff;}
+.btn-primary:hover{background:var(--sky-600);transform:translateY(-2px);}
+.btn-primary:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.btn-light{background:var(--bg-100c);color:var(--ink);}
+.btn-light:hover{background:var(--bg-100b,#eef5fc);}
+
+/* =========================================================
+   RECEIPT
+========================================================= */
+.receipt{
+  display:none;max-width:1000px;margin:38px auto 0;background:#fff;
+  border:2px solid var(--navy-900);border-radius:var(--radius-lg);padding:32px;
+}
+.receipt-heading{text-align:center;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:16px;}
+.receipt-heading h2{font-size:1.7rem;}
+.receipt-heading p{color:var(--slate-soft);font-size:0.9rem;margin-top:6px;}
+.receipt-row{
+  display:flex;justify-content:space-between;gap:20px;padding:11px 0;
+  border-bottom:1px solid var(--border);color:var(--slate);
+}
+.receipt-row strong{color:var(--ink);}
+.receipt-note{
+  margin-top:22px;padding:18px;background:var(--bg-100);border-left:4px solid var(--sky-500);
+  border-radius:10px;color:var(--slate);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+footer{background:#021530;color:#fff;padding:60px 0 24px;}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;}
+.footer-brand{display:flex;align-items:center;gap:13px;margin-bottom:18px;}
+.footer-brand img{width:52px;height:52px;object-fit:cover;background:transparent;border-radius:50%;}
+.footer-brand strong{font-family:'Fraunces',serif;font-size:1.1rem;color:#fff;}
+.footer-brand p{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--sky-300);
+  letter-spacing:0.06em;text-transform:uppercase;margin-top:3px;}
+footer .col p{color:#a9c1db;font-size:0.88rem;}
+footer .col p + p{margin-top:12px;}
+footer h3{margin-bottom:16px;color:var(--sky-300);font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;font-weight:500;}
+footer li{margin-bottom:9px;font-size:0.88rem;color:#a9c1db;}
+footer li a:hover{color:var(--sky-300);}
+.copyright{
+  text-align:center;border-top:1px solid rgba(255,255,255,0.08);margin-top:40px;padding-top:20px;
+  color:#7f97b3;font-size:0.78rem;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width:1100px){
+  nav.main-nav{
+    position:fixed;top:82px;left:0;right:0;
+    background:var(--navy-900);
+    flex-direction:column;align-items:stretch;padding:10px 18px 18px;
+    max-height:0;overflow:hidden;transition:max-height .3s ease;
+  }
+  nav.main-nav.open{max-height:520px;}
+  nav.main-nav a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:0;}
+  .menu-toggle{display:block;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:700px){
+  .header-container{width:94%;}
+  .brand-logo{width:46px;height:46px;}
+  .brand-text h1{font-size:1rem;}
+  .hero h2{font-size:1.9rem;}
+  .registration-section{padding:60px 0;}
+  .section-title h2{font-size:1.5rem;}
+  .form-card{padding:20px;}
+  .form-grid, .documents, .signature-grid, .footer-grid{grid-template-columns:1fr;}
+  .form-section-title{font-size:1.1rem;}
+  .submit-area .btn{width:100%;justify-content:center;}
+  .receipt{padding:20px;}
+  .receipt-row{flex-direction:column;gap:2px;}
+}
+@media print{
+  body{background:#fff;}
+  header, .hero, .registration-section > .container > .section-title,
+  .registration-section > .container > .notice, .form-card, footer{display:none !important;}
+  .receipt{display:block !important;margin:0;border:none;box-shadow:none;}
+  .print-button{display:none;}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL = "https://ohvspfmlkwqdtpyqjhkq.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_T3hWZaRxIuPBlioMfQgIyg_BSjTDd0y";
+const SUPABASE_STORAGE_BUCKET = "entry-test-documents";
+const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+</script>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <a href="index.html" class="brand">
+      <img src="images/school-logo.png" alt="Asraa School System Logo" class="brand-logo" onerror="this.style.opacity='0.35'">
+      <div class="brand-text">
+        <h1>Asraa School System</h1>
+        <p>Jauharabad Campus</p>
+      </div>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="academics.html">Academics</a>
+      <a href="facilities.html">Facilities</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="fee-structure.html">Fee Structure</a>
+      <a href="admissions.html" class="nav-active">Entry Test</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid-texture"></div>
+  <div class="hero-container">
+    <span class="hero-label reveal"><span class="dot"></span>Academic Session 2026–2027</span>
+    <h2 class="reveal">Entry Test <em>Registration Form</em></h2>
+    <p class="reveal">Register your child for the Entry Test at Asraa School System, Jauharabad Campus.</p>
+    <div class="session reveal">Entry Test Registration Fee: Rs. 500</div>
+  </div>
+</section>
+
+<main class="registration-section">
+  <div class="container">
+    <div class="section-title reveal">
+      <span class="eyebrow">Online Registration</span>
+      <h2>Student Registration Form</h2>
+      <p>Please complete all required fields carefully.</p>
+    </div>
+
+    <div class="notice reveal">
+      <strong>Important Note:</strong>
+      This form is for Entry Test registration only. Final admission will be subject to assessment and completion of admission requirements.
+    </div>
+
+    <div class="form-card reveal">
+      <form id="entryTestForm">
+
+        <h3 class="form-section-title">Student Information</h3>
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="studentName">Student Name <span>*</span></label>
+            <input type="text" id="studentName" required placeholder="Enter student's full name">
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender <span>*</span></label>
+            <select id="gender" required>
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth <span>*</span></label>
+            <input type="date" id="dob" required>
+          </div>
+
+          <div class="form-group">
+            <label for="grade">Entry Test For Grade <span>*</span></label>
+            <select id="grade" required>
+              <option value="">Select Grade</option>
+              <option value="Pre-Nursery">Pre-Nursery</option>
+              <option value="Nursery">Nursery</option>
+              <option value="Kindergarten (KG)">Kindergarten (KG)</option>
+              <option value="Grade 1">Grade 1</option>
+              <option value="Grade 2">Grade 2</option>
+              <option value="Grade 3">Grade 3</option>
+              <option value="Grade 4">Grade 4</option>
+              <option value="Grade 5">Grade 5</option>
+              <option value="Grade 6">Grade 6</option>
+              <option value="Grade 7">Grade 7</option>
+              <option value="Grade 8">Grade 8</option>
+              <option value="Pre-9th">Pre-9th</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="previousSchool">Previous School Name</label>
+            <input type="text" id="previousSchool" placeholder="If applicable">
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Parent / Guardian Information</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="guardianName">Father / Guardian Name <span>*</span></label>
+            <input type="text" id="guardianName" required>
+          </div>
+
+          <div class="form-group">
+            <label for="contactNumber">Contact Number <span>*</span></label>
+            <input type="tel" id="contactNumber" required placeholder="03XX-XXXXXXX">
+          </div>
+
+          <div class="form-group">
+            <label for="whatsappNumber">WhatsApp Number</label>
+            <input type="tel" id="whatsappNumber" placeholder="03XX-XXXXXXX">
+          </div>
+
+          <div class="form-group">
+            <label for="occupation">Occupation</label>
+            <input type="text" id="occupation">
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Required Documents</h3>
+        <div class="documents">
+          <div class="document-box">
+            <label for="schoolProof">Previous School Last Class Proof</label>
+            <input type="file" id="schoolProof" accept="image/*,.pdf">
+          </div>
+          <div class="document-box">
+            <label for="birthProof">B-Form / Date of Birth Proof</label>
+            <input type="file" id="birthProof" accept="image/*,.pdf">
+          </div>
+          <div class="document-box">
+            <label for="guardianCnic">Father / Guardian CNIC</label>
+            <input type="file" id="guardianCnic" accept="image/*,.pdf">
+          </div>
+          <div class="document-box">
+            <label for="studentPhoto">One Passport Size Photograph</label>
+            <input type="file" id="studentPhoto" accept="image/*">
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Entry Test Fee Details</h3>
+        <div class="fee-box">
+          <div class="fee-row"><span>Entry Test Registration Fee</span><strong>Rs. 500</strong></div>
+          <div class="fee-row fee-total"><span>Total Payable</span><span>Rs. 500</span></div>
+          <p style="margin-top:12px;"><strong>Note:</strong> Entry Test Fee is <strong>Non-Refundable.</strong></p>
+
+          <div class="payment-box">
+            <strong>Payment Method: JazzCash</strong>
+            <div class="account-holder">Account Holder: Muhammad Bilal Hafeez</div>
+            <div class="payment-number">0300-6027667</div>
+            <p>Please pay Rs. 500 through JazzCash and keep the payment confirmation with you.</p>
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Payment Information</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="transactionId">JazzCash Transaction / Reference ID <span>*</span></label>
+            <input type="text" id="transactionId" required placeholder="Enter transaction/reference ID">
+          </div>
+          <div class="form-group">
+            <label for="paymentScreenshot">Payment Screenshot</label>
+            <input type="file" id="paymentScreenshot" accept="image/*">
+          </div>
+        </div>
+
+        <h3 class="form-section-title">Parent Commitment Statement</h3>
+        <div class="commitment">
+          <p>I understand that this is an Entry Test Registration Form for my child. Final admission is subject to assessment and completion of admission requirements within the given timeline.</p>
+          <div class="checkbox-row">
+            <input type="checkbox" id="commitment" required>
+            <label for="commitment">I have read and agree to the above statement. <span>*</span></label>
+          </div>
+        </div>
+
+        <div class="signature-grid" style="margin-top:25px;">
+          <div class="form-group">
+            <label for="submissionDate">Form Submission Date</label>
+            <input type="date" id="submissionDate">
+          </div>
+          <div class="form-group">
+            <label for="parentSignature">Parent / Guardian Signature</label>
+            <input type="text" id="parentSignature" placeholder="Type parent/guardian name">
+          </div>
+        </div>
+
+        <div class="submit-area">
+          <button type="submit" class="btn btn-primary">Submit Entry Test Registration</button>
+          <button type="reset" class="btn btn-light">Reset Form</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="receipt" id="receipt">
+      <div class="receipt-heading">
+        <h2>Entry Test Registration Receipt</h2>
+        <p>Asraa School System — Jauharabad Campus</p>
+      </div>
+
+      <div class="receipt-row"><strong>Registration Number</strong><span id="receiptNumber"></span></div>
+      <div class="receipt-row"><strong>Student Name</strong><span id="receiptStudent"></span></div>
+      <div class="receipt-row"><strong>Entry Test For Grade</strong><span id="receiptGrade"></span></div>
+      <div class="receipt-row"><strong>Amount</strong><span>Rs. 500</span></div>
+      <div class="receipt-row"><strong>Purpose</strong><span>Entry Test Registration Fee</span></div>
+      <div class="receipt-row"><strong>Payment Method</strong><span>JazzCash</span></div>
+      <div class="receipt-row"><strong>Session</strong><span>2026–2027</span></div>
+
+      <div class="receipt-note">
+        <strong>Important:</strong> Please keep this registration receipt for the Entry Test and interview.
+      </div>
+
+      <div class="submit-area print-button">
+        <button type="button" class="btn btn-primary" onclick="window.print()">Print Receipt</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="col">
+        <div class="footer-brand">
+          <img src="images/school-logo.png" alt="Asraa School System Logo" onerror="this.style.opacity='0.35'">
+          <div>
+            <strong>Asraa School System</strong>
+            <p>Jauharabad Campus</p>
+          </div>
+        </div>
+        <p>Quality, concept-based and future-oriented education for confident, responsible and capable students.</p>
+        <p><strong style="color:#fff;">Vision:</strong> Grooming of Nation Through Education.</p>
+      </div>
+
+      <div class="col">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="academics.html">Academics</a></li>
+          <li><a href="facilities.html">Facilities</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="fee-structure.html">Fee Structure</a></li>
+          <li><a href="admissions.html">Entry Test</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>Connect With Us</h3>
+        <ul>
+          <li>&#128222; <a href="tel:+923006027667">0300-6027667</a></li>
+          <li>&#9993;&#65039; <a href="mailto:asraa03006027667@gmail.com">Email Us</a></li>
+          <li>&#9654; <a href="https://youtube.com/@asraajbdtv2887?si=tjWZW8D4xlou6pU-" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+          <li>&#128172; <a href="https://wa.me/923006027667" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+          <li>&#128205; <a href="https://maps.app.goo.gl/wfBdHeQJ2A5T6mF88" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="copyright">© 2026 Asraa School System – Jauharabad Campus. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- mobile nav + scroll reveal ---------- */
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  menuToggle.addEventListener('click', () => {
+    const isOpen = mainNav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+  mainNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => io.observe(el));
+  } else {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+
+<script>
+    /* ---------- FORM SUBMISSION LOGIC (unchanged from original) ---------- */
+
+    const submissionDate = document.getElementById("submissionDate");
+
+    function setTodayDate() {
+        const today = new Date();
+
+        submissionDate.value =
+            today.getFullYear() +
+            "-" +
+            String(today.getMonth() + 1).padStart(2, "0") +
+            "-" +
+            String(today.getDate()).padStart(2, "0");
+    }
+
+    setTodayDate();
+
+    function getSafeFileName(fileName) {
+        return fileName
+            .replace(/[^a-zA-Z0-9._-]/g, "-")
+            .replace(/-+/g, "-");
+    }
+
+    async function uploadEntryTestDocument(file, documentName, registrationNumber) {
+        if (!file) return null;
+
+        const allowedTypes = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
+
+        if (!allowedTypes.includes(file.type)) {
+            throw new Error("Please upload a JPG, PNG, WEBP image, or PDF document.");
+        }
+
+        if (file.size > 5 * 1024 * 1024) {
+            throw new Error("Each uploaded file must be 5 MB or smaller.");
+        }
+
+        const filePath = `${registrationNumber}/${documentName}-${Date.now()}-${getSafeFileName(file.name)}`;
+
+        const { error } = await supabaseClient
+            .storage
+            .from(SUPABASE_STORAGE_BUCKET)
+            .upload(filePath, file, {
+                cacheControl: "3600",
+                upsert: false,
+                contentType: file.type
+            });
+
+        if (error) throw error;
+
+        return filePath;
+    }
+
+
+    document
+        .getElementById("entryTestForm")
+        .addEventListener("submit", async function (event) {
+
+            event.preventDefault();
+
+            const form = event.target;
+
+            try {
+
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.textContent;
+                submitButton.disabled = true;
+                submitButton.textContent = "Uploading documents...";
+
+                const randomNumber =
+                    Math.floor(1000 + Math.random() * 9000);
+
+                const registrationNumber =
+                    "ASRAA-ET-" +
+                    new Date().getFullYear() +
+                    "-" +
+                    randomNumber;
+
+                const schoolProofFile = document.getElementById("schoolProof").files[0];
+                const birthProofFile = document.getElementById("birthProof").files[0];
+                const guardianCnicFile = document.getElementById("guardianCnic").files[0];
+                const studentPhotoFile = document.getElementById("studentPhoto").files[0];
+                const paymentScreenshotFile = document.getElementById("paymentScreenshot").files[0];
+
+                const [schoolProofUrl, birthProofUrl, guardianCnicUrl, studentPhotoUrl, paymentScreenshotUrl] =
+                    await Promise.all([
+                        uploadEntryTestDocument(schoolProofFile, "school-proof", registrationNumber),
+                        uploadEntryTestDocument(birthProofFile, "birth-proof", registrationNumber),
+                        uploadEntryTestDocument(guardianCnicFile, "guardian-cnic", registrationNumber),
+                        uploadEntryTestDocument(studentPhotoFile, "student-photo", registrationNumber),
+                        uploadEntryTestDocument(paymentScreenshotFile, "payment-screenshot", registrationNumber)
+                    ]);
+
+                const applicationData = {
+
+                    registration_number: registrationNumber,
+
+                    student_name:
+                        document.getElementById("studentName").value.trim(),
+
+                    gender:
+                        document.getElementById("gender").value,
+
+                    date_of_birth:
+                        document.getElementById("dob").value || null,
+
+                    grade:
+                        document.getElementById("grade").value,
+
+                    previous_school:
+                        document.getElementById("previousSchool").value.trim() || null,
+
+                    guardian_name:
+                        document.getElementById("guardianName").value.trim(),
+
+                    contact_number:
+                        document.getElementById("contactNumber").value.trim(),
+
+                    whatsapp_number:
+                        document.getElementById("whatsappNumber").value.trim() || null,
+
+                    occupation:
+                        document.getElementById("occupation").value.trim() || null,
+
+                    school_proof_url: schoolProofUrl,
+
+                    birth_proof_url: birthProofUrl,
+
+                    guardian_cnic_url: guardianCnicUrl,
+
+                    student_photo_url: studentPhotoUrl,
+
+                    transaction_id:
+                        document.getElementById("transactionId").value.trim() || null,
+
+                    payment_screenshot_url: paymentScreenshotUrl,
+
+                    commitment_accepted:
+                        document.getElementById("commitment").checked,
+
+                    submission_date:
+                        submissionDate.value,
+
+                    parent_signature:
+                        document.getElementById("parentSignature").value.trim() || null,
+
+                    status: "Pending",
+
+                    test_date: null,
+
+                    test_time: null,
+
+                    admin_remarks: null
+                };
+
+                console.log("Submitting data:", applicationData);
+
+                const { data, error } = await supabaseClient
+                    .from("entry_test_applications")
+                    .insert([applicationData])
+                    .select()
+                    .single();
+
+                if (error) {
+
+                    console.error("Supabase Insert Error:", error);
+
+                    alert(
+                        "Application submit نہیں ہوئی۔\n\n" +
+                        "Supabase Error:\n" +
+                        error.message
+                    );
+
+                    submitButton.disabled = false;
+                    submitButton.textContent = originalButtonText;
+
+                    return;
+                }
+
+                console.log("Application successfully saved:", data);
+
+                submitButton.textContent = "Application Submitted";
+
+                document.getElementById("receiptNumber").textContent =
+                    registrationNumber;
+
+                document.getElementById("receiptStudent").textContent =
+                    applicationData.student_name;
+
+                document.getElementById("receiptGrade").textContent =
+                    applicationData.grade;
+
+                const receipt =
+                    document.getElementById("receipt");
+
+                receipt.style.display = "block";
+
+                receipt.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+                form.reset();
+
+                setTodayDate();
+
+                alert(
+                    "Application successfully submitted!\n\n" +
+                    "Registration Number: " +
+                    registrationNumber
+                );
+
+                submitButton.disabled = false;
+                submitButton.textContent = originalButtonText;
+
+            }
+
+            catch (err) {
+
+                console.error("Unexpected Error:", err);
+
+                alert(
+                    "Application submit کرتے وقت unexpected error آیا ہے۔\n\n" +
+                    err.message
+                );
+
+                const submitButton = form.querySelector('button[type="submit"]');
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.textContent = "Submit Entry Test Registration";
+                }
+            }
+
+        });
+</script>
+
+</body>
+</html>
